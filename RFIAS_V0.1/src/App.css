@@ -1,10 +1,102 @@
-.card{
-    max-width: 540px;
-    margin-top: 18px;
-    height: auto;
+body {
+    padding-top: 132px;
 }
 
-.card-title{
+.defaultCard {
+    max-width: 540px;
+    height: auto;
+    box-shadow: 2px 2px 6px gainsboro;
+    background-color: rgba(246, 243, 253, 0.72) !important;
+}
+
+.lvReqCard {
+    box-shadow: 2px 2px 6px gainsboro;
+    border: none !important;
+    background-color: rgba(246, 243, 253, 0.50) !important;
+}
+
+.lvReqCard:hover {
+    background-color: white !important;
+}
+
+.card-title {
     font-weight: bold;
     font-size: 36px;
+}
+
+.chart-outer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 430px;
+    margin-top: 12px;
+}
+
+.chart-text > h4 {
+    margin: 26px 17px;
+    font-weight: 500;
+    color: #2E1458;
+}
+
+.navbar {
+    font-weight: 580;
+}
+
+.leaveRq-outer {
+    height: 430px;
+    overflow: auto;
+    padding: 14px;
+    border-radius: 6px;
+}
+
+.leaveRq-outer::-webkit-scrollbar {
+    background-color: white;
+    width: 8px;
+}
+
+.leaveRq-outer::-webkit-scrollbar-thumb {
+    background-color: #ececec;
+    border-radius: 24px;
+    padding: 8px;
+    display: none;
+}
+
+.leaveRq-outer::-webkit-scrollbar-thumb:hover {
+    display: block;
+}
+
+.exploreBtn {
+    background-color: #785EA4 !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+}
+
+.low-att-table-outer {
+    box-shadow: 1px 1px 6px gainsboro;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+}
+
+.clock-outer {
+    background-color: white;
+    padding-top: 32px;
+}
+
+.clock-inner > h2 {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.clock-outer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 2222;
+    top: 56px;
+    background-color: white;
 }
