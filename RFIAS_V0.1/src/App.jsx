@@ -5,6 +5,7 @@ import Report from './components/reports.jsx'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route, Link,} from "react-router-dom";
+import Clock from "./components/cards/clock.jsx";
 
 function Dashboard() {
 
@@ -13,7 +14,7 @@ function Dashboard() {
             <Router>
 
                 <div className="nav-outer">
-                    <nav className="navbar navbar-expand-lg bg-black navbar-dark">
+                    <nav className="navbar navbar-expand-lg fixed-top bg-body-tertiary navbar-light">
                         <div className="container-fluid">
                             {/*<Link to='/home' className="navbar-brand logo-outer">
                                 <img
@@ -28,7 +29,8 @@ function Dashboard() {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav ms-auto">
                                     <li className="nav-item">
-                                        <Link to='/' className="navbar-text nav-link active" aria-current="page">Home</Link>
+                                        <Link to='/' className="navbar-text nav-link active"
+                                              aria-current="page">Home</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/employee' className="nav-link">Employee</Link>
@@ -44,6 +46,19 @@ function Dashboard() {
                         </div>
                     </nav>
                 </div>
+
+                <div className="row">
+                    <div className="col-12">
+                        <div className="clock-outer">
+                            <div className="container">
+                                <Clock/>
+                                <hr/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
 
                 <Routes>
                     <Route path='/' element={<Home/>}></Route>
