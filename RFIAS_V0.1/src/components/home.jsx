@@ -63,7 +63,7 @@ function Home() {
                 </div>
                 <div className="row">
                     <div className="col-12 col-lg-7">
-                        <div className="chart-text">
+                        <div className="chart-progess-text">
                             <h4>Attendance Progress</h4>
 
                         </div>

@@ -23,18 +23,26 @@ body {
     font-weight: bold;
     font-size: 36px;
 }
+/*430*/
 
 .chart-outer {
-    width: 100%;
+    width: 96%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 430px;
-    margin-top: 12px;
+    height: 392px;
+    margin-top: 36px;
+    box-shadow: 2px 2px 6px gainsboro;
+    border-radius: 8px;
 }
 
 .chart-text > h4 {
     margin: 26px 17px;
+    font-weight: 500;
+    color: #2E1458;
+}
+.chart-progess-text > h4{
+    margin: 38px 17px;
     font-weight: 500;
     color: #2E1458;
 }
