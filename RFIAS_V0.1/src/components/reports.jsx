@@ -1,7 +1,7 @@
 import {Avatar, Button, TextField} from "@mui/material";
 
-function Report(){
-    return(
+function Report() {
+    return (
 
         <>
             <br/>
@@ -73,7 +73,8 @@ function Report(){
                         <div className="search-outer col-12">
                             <div className="col-12 col-sm-6 col-md-4">
                                 <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchRport' label="Search Report ID"  variant="standard"
+                                    <TextField fullWidth type='search' id='serchRport' label="Search Report ID"
+                                               variant="standard"
                                                size='small'
                                                placeholder='search here'/>
                                 </div>
@@ -126,18 +127,14 @@ function Report(){
                         </tr>
 
                         </tbody>
-
-
                     </table>
                 </div>
-
-
             </div>
 
         </>
 
 
-
     );
 }
+
 export default Report;
