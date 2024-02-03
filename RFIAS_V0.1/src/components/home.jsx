@@ -67,8 +67,8 @@ function Home() {
                 </div>
                 <div className="row">
                     <div className="col-12 col-lg-7">
-                        <div className="chart-progess-text">
-                            <h5>Attendance Progress</h5>
+                        <div className="chart-progess-text col-12">
+                            <h5>Monthly Attendance Progress</h5>
                         </div>
                         <div className="chart-outer">
                             <DefaultChart/>
@@ -77,7 +77,7 @@ function Home() {
 
                     <div className="col-12 col-lg-5">
                         <div className="chart-text">
-                            <h5 style={{color:"#e74c3c", fontWeight:"660"}}>Leave Requests</h5>
+                            <h5><span style={{color:"#f39c12", fontWeight:"660"}}>Leave </span> Requests</h5>
                         </div>
                         <div className="leaveRq-outer">
 
@@ -97,7 +97,7 @@ function Home() {
                 <div className="row">
                     <div className="col-12">
                         <div className="chart-text">
-                            <h5>Low Attendance Researchers</h5>
+                            <h5><span style={{color:"#e74c3c", fontWeight:"660"}}>Low </span>Attendance</h5>
                         </div>
 
                         <div className="low-att-table-outer">

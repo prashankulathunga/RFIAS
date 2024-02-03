@@ -42,9 +42,9 @@ body {
     color: #2E1458;
 }
 .chart-progess-text > h5{
-    margin: 38px 17px;
-    font-weight: 500;
-    color: #2E1458;
+    margin: 38px 8px;
+    font-weight: 650;
+    color: #34495e;
 }
 
 .navbar {
