@@ -33,7 +33,7 @@ function Dashboard() {
                                               aria-current="page">Home</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/employee' className="nav-link">Employee</Link>
+                                        <Link to='/employee' className="nav-link">Researcher</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/attendance' className="nav-link">Attendance</Link>

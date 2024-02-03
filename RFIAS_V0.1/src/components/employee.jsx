@@ -53,8 +53,8 @@ function Employee() {
                                     row
                                     aria-labelledby="demo-row-radio-buttons-group-label"
                                     name="row-radio-buttons-group">
-                                    <FormControlLabel value="female" control={<Radio/>} label="Female"/>
                                     <FormControlLabel value="male" control={<Radio/>} label="Male"/>
+                                    <FormControlLabel value="female" control={<Radio/>} label="Female"/>
                                 </RadioGroup>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ function Employee() {
                         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
                             <div className="filed-margin">
                                 <TextField fullWidth type='Date' id='empDob'
-                                           helperText='Please select Birth Date' required/>
+                                           helperText='Please choose Birth Date' required/>
                             </div>
                         </div>
 
@@ -143,7 +143,7 @@ function Employee() {
                         <div className="search-outer col-12">
                             <div className="col-12 col-sm-6 col-md-4">
                                 <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchEmp' label='Search Reserchers' variant="standard"
+                                    <TextField fullWidth type='search' id='serchEmp' label="Search Resercher's NIC" variant="standard"
                                                size='small'
                                                placeholder='search here'/>
                                 </div>
@@ -189,13 +189,13 @@ function Employee() {
                         </tr>
 
                         <tr>
-                            <td>2002651725971V</td>
-                            <td>Siyadoris Appuhami</td>
-                            <td>Male</td>
-                            <td>20/06/1980</td>
-                            <td>notysiyadoris@gmail.com</td>
-                            <td>077-5348641</td>
-                            <td>Colombo,Sri Lanka</td>
+                            <td>2002651065971V</td>
+                            <td>Noty Madu</td>
+                            <td>Female</td>
+                            <td>08/11/1993</td>
+                            <td>madu123@gmail.com</td>
+                            <td>077-5375839</td>
+                            <td>Panadura,Sri Lanka</td>
                             <td>Researcher</td>
                             <td>
                                 <div className="optionBtn">
