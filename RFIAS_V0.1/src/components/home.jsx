@@ -98,12 +98,12 @@ function Home() {
 
 
                         <div className="low-att-table-outer">
-                            <table className='table table-hover'>
+                            <table className='table table-hover table-bordered'>
                                 <thead>
                                 <tr>
-                                    <th>#id</th>
-                                    <th>Name</th>
-                                    <th>Month Attendance Count</th>
+                                    <th scope='col'>#id</th>
+                                    <th scope='col'>Name</th>
+                                    <th scope='col'>Month Attendance Count</th>
                                 </tr>
                                 </thead>
                                 <tbody>
