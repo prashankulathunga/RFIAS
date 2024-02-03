@@ -143,7 +143,7 @@ function Employee() {
                         <div className="search-outer col-12">
                             <div className="col-12 col-sm-6 col-md-4">
                                 <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchEmp' label='Search Reserchers'
+                                    <TextField fullWidth type='search' id='serchEmp' label='Search Reserchers' variant="standard"
                                                size='small'
                                                placeholder='search here'/>
                                 </div>
