@@ -124,7 +124,16 @@ function Employee() {
                                 </FormControl>
                             </div>
                         </div>
+
+                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div className="filed-margin">
+                                <TextField fullWidth type='file' id='rportFile'
+                                           helperText='Please choose image' required/>
+                            </div>
+                        </div>
+
                     </div>
+
 
                     <div className="row">
                         <div className="col-12 savEmpBtn">
