@@ -41,8 +41,12 @@ const leaveReqData = [
         message: 'Mata niwadu oni ada'
     },
     {
-        username: 'Nisakanthi',
+        username: 'Nisakanthi Uppala',
         message: 'Mata enna wenne ne mata hodatama una halo'
+    },
+    {
+        username: 'Rasara Udagedara',
+        message: 'Mata enna wenne ne ada pees give me leave'
     },
 ];
 
@@ -64,8 +68,7 @@ function Home() {
                 <div className="row">
                     <div className="col-12 col-lg-7">
                         <div className="chart-progess-text">
-                            <h4>Attendance Progress</h4>
-
+                            <h5>Attendance Progress</h5>
                         </div>
                         <div className="chart-outer">
                             <DefaultChart/>
@@ -74,7 +77,7 @@ function Home() {
 
                     <div className="col-12 col-lg-5">
                         <div className="chart-text">
-                            <h4>Leave Requests</h4>
+                            <h5 style={{color:"#e74c3c", fontWeight:"660"}}>Leave Requests</h5>
                         </div>
                         <div className="leaveRq-outer">
 
@@ -94,7 +97,7 @@ function Home() {
                 <div className="row">
                     <div className="col-12">
                         <div className="chart-text">
-                            <h4>Low Attendance Researchers</h4>
+                            <h5>Low Attendance Researchers</h5>
                         </div>
 
                         <div className="low-att-table-outer">

@@ -8,7 +8,7 @@ function Report() {
             <div className="container">
 
                 <div className="employee-header col-12 col-sm-6">
-                    <h4>+ Add Reports</h4>
+                    <h5>+ Add Report</h5>
                 </div>
                 <hr className='col-3'/>
 
@@ -65,7 +65,7 @@ function Report() {
                     <br/>
 
                     <div className="allEmpHeader col-12 col-sm-6">
-                        <h4>All Reports</h4>
+                        <h5>All Reports</h5>
                     </div>
                     <hr className='col-3'/>
 
