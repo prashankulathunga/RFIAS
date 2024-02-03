@@ -9,7 +9,7 @@ function DefaultChart() {
             series={[
                 {
                     data: [2, 5.5, 2, 8.5, 1.5, 5],
-                    color: '#664898'
+                    color: '#2E1458'
                 },
             ]}
         />
