@@ -15,7 +15,7 @@ function Dashboard() {
             <Router>
 
                 <div className="nav-outer">
-                    <nav className="navbar navbar-expand-lg fixed-top bg-body-tertiary navbar-light">
+                    <nav className="navbar navbar-expand-lg fixed-top bg-dark navbar-dark">
                         <div className="container-fluid">
                             {/*<Link to='/home' className="navbar-brand logo-outer">
                                 <img
