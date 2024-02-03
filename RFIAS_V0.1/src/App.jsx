@@ -6,6 +6,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route, Link,} from "react-router-dom";
 import Clock from "./components/cards/clock.jsx";
+import Salary from "./components/salary.jsx";
 
 function Dashboard() {
 
@@ -39,7 +40,10 @@ function Dashboard() {
                                         <Link to='/attendance' className="nav-link">Attendance</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to='/reports' className="nav-link">Reports</Link>
+                                        <Link to='/salary' className="nav-link">Salary</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to='/report' className="nav-link">Report</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -64,7 +68,8 @@ function Dashboard() {
                     <Route path='/' element={<Home/>}></Route>
                     <Route path='/attendance' element={<Attendance/>}></Route>
                     <Route path='/employee' element={<Employee/>}></Route>
-                    <Route path='/reports' element={<Report/>}></Route>
+                    <Route path='/salary' element={<Salary/>}></Route>
+                    <Route path='/report' element={<Report/>}></Route>
                 </Routes>
 
             </Router>
