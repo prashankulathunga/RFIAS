@@ -1,4 +1,4 @@
-import {Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField} from "@mui/material";
+import {Avatar, Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField} from "@mui/material";
 
 function Salary(){
 
@@ -109,6 +109,7 @@ function Salary(){
                     <table className='table table-hover col-12'>
                         <thead>
                         <tr>
+                            <th scope="col"></th>
                             <th scope="col">Nic</th>
                             <th scope="col">Name</th>
                             <th scope="col">Date</th>
@@ -119,6 +120,7 @@ function Salary(){
                         </thead>
                         <tbody>
                         <tr>
+                            <td><Avatar>SA</Avatar></td>
                             <td>2002651725971V</td>
                             <td>Siyadoris Appuhami</td>
                             <td>20/03/2024</td>
@@ -133,6 +135,7 @@ function Salary(){
                         </tr>
 
                         <tr>
+                            <td><Avatar>NP</Avatar></td>
                             <td>2002861725971V</td>
                             <td>Notheris Appuhami</td>
                             <td>07/01/2024</td>
