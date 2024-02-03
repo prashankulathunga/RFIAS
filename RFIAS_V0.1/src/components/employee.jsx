@@ -1,4 +1,5 @@
 import {
+    Avatar,
     Button,
     FormControl,
     FormControlLabel, FormHelperText,
@@ -158,6 +159,7 @@ function Employee() {
                     <table className='table table-hover col-12'>
                         <thead>
                         <tr>
+                            <th scope='col'></th>
                             <th scope="col">Nic</th>
                             <th scope="col">Name</th>
                             <th scope="col">Gender</th>
@@ -172,6 +174,7 @@ function Employee() {
 
                         <tbody>
                         <tr>
+                            <td><Avatar>SA</Avatar></td>
                             <td>2002651725971V</td>
                             <td>Siyadoris Appuhami</td>
                             <td>Male</td>
@@ -189,6 +192,7 @@ function Employee() {
                         </tr>
 
                         <tr>
+                            <td><Avatar>NM</Avatar></td>
                             <td>2002651065971V</td>
                             <td>Noty Madu</td>
                             <td>Female</td>

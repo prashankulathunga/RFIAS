@@ -2,6 +2,7 @@ import DefaultCard from "./cards/defaultCard.jsx";
 import DefaultChart from "./cards/defaultChart.jsx";
 import LeaveRequestCard from "./cards/leaveRequestCard.jsx";
 import Clock from "./cards/clock.jsx";
+import {Avatar} from "@mui/material";
 
 const cardData = [
     {
@@ -96,24 +97,26 @@ function Home() {
                             <h4>Low Attendance Researchers</h4>
                         </div>
 
-
                         <div className="low-att-table-outer">
-                            <table className='table table-hover table-bordered'>
+                            <table className='table table-hover'>
                                 <thead>
                                 <tr>
-                                    <th scope='col'>#id</th>
+                                    <th scope='col'></th>
+                                    <th scope='col'>Nic</th>
                                     <th scope='col'>Name</th>
-                                    <th scope='col'>Month Attendance Count</th>
+                                    <th className='table-danger' scope='col'>Month Attendance Count</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>001</td>
+                                    <td><Avatar>DR</Avatar></td>
+                                    <td>200212639871V</td>
                                     <td>Dulantha Ranaweera</td>
                                     <td>71</td>
                                 </tr>
                                 <tr>
-                                    <td>002</td>
+                                    <td><Avatar>AN</Avatar></td>
+                                    <td>100216026952V</td>
                                     <td>Anuja Nimsara</td>
                                     <td>76</td>
                                 </tr>
