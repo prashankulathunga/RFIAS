@@ -13,7 +13,7 @@ const Clock = () => {
     return (
         <>
             <div className="clock-inner">
-                <h2>{curDate}</h2>
+                <h3>{curDate}</h3>
             </div>
         </>
     );

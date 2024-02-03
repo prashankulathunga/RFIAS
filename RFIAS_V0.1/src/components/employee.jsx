@@ -18,7 +18,7 @@ function Employee() {
             <div className="container">
 
                 <div className="employee-header col-12 col-sm-6">
-                    <h4>+ Add New Researcher</h4>
+                    <h5>+ Add New Researcher</h5>
                 </div>
                 <hr className='col-3'/>
                 <form>
@@ -145,7 +145,7 @@ function Employee() {
                     <br/>
 
                     <div className="allEmpHeader col-12 col-sm-6">
-                        <h4>All Researchers</h4>
+                        <h5>All Researchers</h5>
                     </div>
                     <hr className='col-3'/>
 

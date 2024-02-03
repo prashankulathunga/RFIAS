@@ -8,7 +8,7 @@ function Salary(){
             <div className="container">
 
                 <div className="employee-header col-12 col-sm-6">
-                    <h4>+ Add Salary</h4>
+                    <h5>+ Add Salary</h5>
                 </div>
                 <hr className='col-3'/>
 
@@ -86,7 +86,7 @@ function Salary(){
                     <br/>
 
                     <div className="allEmpHeader col-12 col-sm-6">
-                        <h4>All Salary Details</h4>
+                        <h5>All Salary Details</h5>
                     </div>
                     <hr className='col-3'/>
 

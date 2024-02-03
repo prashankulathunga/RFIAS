@@ -23,7 +23,6 @@ body {
     font-weight: bold;
     font-size: 36px;
 }
-/*430*/
 
 .chart-outer {
     width: 96%;
@@ -37,12 +36,12 @@ body {
     border-color: gainsboro!important;
 }
 
-.chart-text > h4 {
-    margin: 26px 17px;
+.chart-text > h5 {
+    margin: 28px 17px;
     font-weight: 500;
     color: #2E1458;
 }
-.chart-progess-text > h4{
+.chart-progess-text > h5{
     margin: 38px 17px;
     font-weight: 500;
     color: #2E1458;
@@ -90,7 +89,7 @@ body {
     padding-top: 48px;
 }
 
-.clock-inner > h2 {
+.clock-inner > h3 {
     font-weight: bold;
     color: #34495e;
 }
