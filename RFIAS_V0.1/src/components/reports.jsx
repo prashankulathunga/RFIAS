@@ -71,7 +71,7 @@ function Report() {
 
                     <div className="row">
                         <div className="search-outer col-12">
-                            <div className="col-12 col-sm-6 col-md-4">
+                            <div className="col-12 col-sm-6 col-md-4 col-lg-3">
                                 <div className="filed-margin">
                                     <TextField fullWidth type='search' id='serchRport' label="Search Report ID"
                                                variant="standard"
