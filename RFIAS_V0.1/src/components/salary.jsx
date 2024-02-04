@@ -106,53 +106,55 @@ function Salary(){
 
 
                 <div className=" table-outer col-12">
-                    <table className='table table-hover col-12'>
-                        <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Nic</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Salary Month</th>
-                            <th scope="col">Salary</th>
-                            <th scope="col">Options</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Avatar>SA</Avatar></td>
-                            <td>2002651725971V</td>
-                            <td>Siyadoris Appuhami</td>
-                            <td>20/03/2024</td>
-                            <td>March</td>
-                            <td>45000.00</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                    <div className="table-wrapper">
+                        <table className='table table-hover col-12'>
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nic</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Salary Month</th>
+                                <th scope="col">Salary</th>
+                                <th scope="col">Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><Avatar>SA</Avatar></td>
+                                <td>2002651725971V</td>
+                                <td>Siyadoris Appuhami</td>
+                                <td>20/03/2024</td>
+                                <td>March</td>
+                                <td>45000.00</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td><Avatar>NP</Avatar></td>
-                            <td>2002861725971V</td>
-                            <td>Notheris Appuhami</td>
-                            <td>07/01/2024</td>
-                            <td>January</td>
-                            <td>67000.00</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><Avatar>NP</Avatar></td>
+                                <td>2002861725971V</td>
+                                <td>Notheris Appuhami</td>
+                                <td>07/01/2024</td>
+                                <td>January</td>
+                                <td>67000.00</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        </tbody>
+                            </tbody>
 
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
 

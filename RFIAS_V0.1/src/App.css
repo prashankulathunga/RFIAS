@@ -32,7 +32,7 @@ body {
     height: 392px;
     margin-top: 36px;
     box-shadow: 2px 2px 6px gainsboro;
-    border-radius: 8px;
+    border-radius: 2px;
     border-color: gainsboro!important;
 }
 
@@ -142,3 +142,37 @@ body {
     font-weight: 500;
     color: #2E1458;
 }
+.table-outer>.table {
+    overflow-x: auto;
+}
+
+.table-wrapper{
+    overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@media screen and (max-width:1211px) {
+
+    .table-wrapper{
+        overflow-x: scroll;
+    }
+
+
+}*/
+

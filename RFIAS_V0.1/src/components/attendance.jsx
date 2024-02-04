@@ -89,50 +89,52 @@ function Attendance(){
                 </form>
 
                 <div className=" table-outer col-12">
-                    <table className='table table-hover col-12'>
-                        <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Nic</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Attendance</th>
-                            <th scope="col">Options</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td><Avatar>SA</Avatar></td>
-                            <td>2002651725971V</td>
-                            <td>Siyadoris Appuhami</td>
-                            <td>20/06/2024</td>
-                            <td>1</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                    <div className="table-wrapper">
+                        <table className='table table-hover col-12'>
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Nic</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Attendance</th>
+                                <th scope="col">Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><Avatar>SA</Avatar></td>
+                                <td>2002651725971V</td>
+                                <td>Siyadoris Appuhami</td>
+                                <td>20/06/2024</td>
+                                <td>1</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td><Avatar>NP</Avatar></td>
-                            <td>2002861725971V</td>
-                            <td>Notheris Appuhami</td>
-                            <td>07/01/2024</td>
-                            <td>0</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><Avatar>NP</Avatar></td>
+                                <td>2002861725971V</td>
+                                <td>Notheris Appuhami</td>
+                                <td>07/01/2024</td>
+                                <td>0</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        </tbody>
+                            </tbody>
 
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
             </div>
