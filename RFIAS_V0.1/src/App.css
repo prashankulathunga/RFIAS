@@ -33,7 +33,7 @@ body {
     margin-top: 36px;
     box-shadow: 2px 2px 6px gainsboro;
     border-radius: 2px;
-    border-color: gainsboro!important;
+    border-color: gainsboro !important;
 }
 
 .chart-text > h5 {
@@ -41,7 +41,8 @@ body {
     font-weight: 500;
     color: #2E1458;
 }
-.chart-progess-text > h5{
+
+.chart-progess-text > h5 {
     margin: 38px 8px;
     font-weight: 650;
     color: #34495e;
@@ -142,37 +143,90 @@ body {
     font-weight: 500;
     color: #2E1458;
 }
-.table-outer>.table {
+
+.table-outer > .table {
     overflow-x: auto;
 }
 
-.table-wrapper{
+.table-wrapper {
     overflow-x: auto;
+}
+
+.container {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 
 
+/* ============== media query =============== */
 
+@media (max-width: 1536px) {
 
+    .container {
+        max-width: 1280px;
+    }
+}
 
+@media (max-width: 1280px) {
 
-
-
-
-
-
-
-
-
-
-
-/*
-@media screen and (max-width:1211px) {
-
-    .table-wrapper{
-        overflow-x: scroll;
+    .container {
+        max-width: 1024px;
     }
 
+}
 
-}*/
+@media (max-width: 1024px) {
+
+    .container {
+        max-width: 768px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        max-width: 640px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .container {
+        max-width: 475px;
+    }
+
+}
+
+@media (max-width: 475px) {
+
+    .container {
+        width: 100%;
+    }
+
+}
+
+/* ============== media query =============== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
