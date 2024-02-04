@@ -1,7 +1,6 @@
 import DefaultCard from "./cards/defaultCard.jsx";
 import DefaultChart from "./cards/defaultChart.jsx";
 import LeaveRequestCard from "./cards/leaveRequestCard.jsx";
-import Clock from "./cards/clock.jsx";
 import {Avatar} from "@mui/material";
 
 const cardData = [
@@ -101,30 +100,32 @@ function Home() {
                         </div>
 
                         <div className="low-att-table-outer">
-                            <table className='table table-hover'>
-                                <thead>
-                                <tr>
-                                    <th scope='col'></th>
-                                    <th scope='col'>Nic</th>
-                                    <th scope='col'>Name</th>
-                                    <th className='table-danger' scope='col'>Month Attendance Count</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><Avatar>DR</Avatar></td>
-                                    <td>200212639871V</td>
-                                    <td>Dulantha Ranaweera</td>
-                                    <td>71</td>
-                                </tr>
-                                <tr>
-                                    <td><Avatar>AN</Avatar></td>
-                                    <td>100216026952V</td>
-                                    <td>Anuja Nimsara</td>
-                                    <td>76</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div className="table-wrapper">
+                                <table className='table table-hover'>
+                                    <thead>
+                                    <tr>
+                                        <th scope='col'></th>
+                                        <th scope='col'>Nic</th>
+                                        <th scope='col'>Name</th>
+                                        <th className='table-danger' scope='col'>Month Attendance Count</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><Avatar>DR</Avatar></td>
+                                        <td>200212639871V</td>
+                                        <td>Dulantha Ranaweera</td>
+                                        <td>71</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Avatar>AN</Avatar></td>
+                                        <td>100216026952V</td>
+                                        <td>Anuja Nimsara</td>
+                                        <td>76</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

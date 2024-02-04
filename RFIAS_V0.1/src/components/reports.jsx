@@ -86,48 +86,50 @@ function Report() {
                 </form>
 
                 <div className=" table-outer col-12">
-                    <table className='table table-hover col-12'>
-                        <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Any Note</th>
-                            <th scope="col">Report</th>
-                            <th scope="col">Options</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Power Plant</td>
-                            <td>20/03/2024</td>
-                            <td>NULL</td>
-                            <td>File</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                    <div className="table-wrapper">
+                        <table className='table table-hover col-12'>
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Any Note</th>
+                                <th scope="col">Report</th>
+                                <th scope="col">Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Power Plant</td>
+                                <td>20/03/2024</td>
+                                <td>NULL</td>
+                                <td>File</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>002</td>
-                            <td>Virus-UXI</td>
-                            <td>07/01/2022</td>
-                            <td>NULL</td>
-                            <td>File</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Virus-UXI</td>
+                                <td>07/01/2022</td>
+                                <td>NULL</td>
+                                <td>File</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 

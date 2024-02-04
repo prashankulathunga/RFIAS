@@ -165,63 +165,65 @@ function Employee() {
 
 
                 <div className=" table-outer col-12">
-                    <table className='table table-hover col-12'>
-                        <thead>
-                        <tr>
-                            <th scope='col'></th>
-                            <th scope="col">Nic</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Dob</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Designation</th>
-                            <th scope="col">Options</th>
-                        </tr>
-                        </thead>
+                    <div className="table-wrapper">
+                        <table className='table table-hover col-12'>
+                            <thead>
+                            <tr>
+                                <th scope='col'></th>
+                                <th scope="col">Nic</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Dob</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Options</th>
+                            </tr>
+                            </thead>
 
-                        <tbody>
-                        <tr>
-                            <td><Avatar>SA</Avatar></td>
-                            <td>2002651725971V</td>
-                            <td>Siyadoris Appuhami</td>
-                            <td>Male</td>
-                            <td>20/06/1980</td>
-                            <td>notysiyadoris@gmail.com</td>
-                            <td>077-5348641</td>
-                            <td>Colombo,Sri Lanka</td>
-                            <td>Researcher</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                            <tbody>
+                            <tr>
+                                <td><Avatar>SA</Avatar></td>
+                                <td>2002651725971V</td>
+                                <td>Siyadoris Appuhami</td>
+                                <td>Male</td>
+                                <td>20/06/1980</td>
+                                <td>notysiyadoris@gmail.com</td>
+                                <td>077-5348641</td>
+                                <td>Colombo,Sri Lanka</td>
+                                <td>Researcher</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td><Avatar>NM</Avatar></td>
-                            <td>2002651065971V</td>
-                            <td>Noty Madu</td>
-                            <td>Female</td>
-                            <td>08/11/1993</td>
-                            <td>madu123@gmail.com</td>
-                            <td>077-5375839</td>
-                            <td>Panadura,Sri Lanka</td>
-                            <td>Researcher</td>
-                            <td>
-                                <div className="optionBtn">
-                                    <Button variant="contained" color='success' size="small">Update</Button>
-                                    <Button variant="contained" color='error' size="small">Delete</Button>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><Avatar>NM</Avatar></td>
+                                <td>2002651065971V</td>
+                                <td>Noty Madu</td>
+                                <td>Female</td>
+                                <td>08/11/1993</td>
+                                <td>madu123@gmail.com</td>
+                                <td>077-5375839</td>
+                                <td>Panadura,Sri Lanka</td>
+                                <td>Researcher</td>
+                                <td>
+                                    <div className="optionBtn">
+                                        <Button variant="contained" color='success' size="small">Update</Button>
+                                        <Button variant="contained" color='error' size="small">Delete</Button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                        </tbody>
+                            </tbody>
 
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
 
