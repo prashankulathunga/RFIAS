@@ -2,11 +2,15 @@ import Home from './components/home.jsx'
 import Attendance from './components/attendance.jsx'
 import Employee from './components/employee.jsx'
 import Report from './components/reports.jsx'
+import Signup from './components/signup.jsx'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route, Link,} from "react-router-dom";
 import Clock from "./components/cards/clock.jsx";
 import Salary from "./components/salary.jsx";
+
+
+
 
 function Dashboard() {
 
@@ -29,6 +33,9 @@ function Dashboard() {
                             </button>
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                        <Link to='/signup' className="nav-link">Login</Link>
+                                    </li>
                                     <li className="nav-item">
                                         <Link to='/' className="navbar-text nav-link active"
                                               aria-current="page">Home</Link>
@@ -70,6 +77,7 @@ function Dashboard() {
                     <Route path='/employee' element={<Employee/>}></Route>
                     <Route path='/salary' element={<Salary/>}></Route>
                     <Route path='/report' element={<Report/>}></Route>
+                    <Route path='/signup' element={<Signup/>}></Route>
                 </Routes>
 
             </Router>
