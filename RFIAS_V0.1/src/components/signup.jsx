@@ -20,17 +20,17 @@ function signup() {
             <h1> Signin</h1>
           </div>
           <div className="input-box">
-            <input type="text" placeholder="Employee NIC" required></input>
+            <input type="text" placeholder="Employee NIC" required/>
           </div>
           <div className="input-box">
-            <input type="email" placeholder="Employee email" required></input>
+            <input type="email" placeholder="Employee email" required/>
           </div>
           <div className="input-box">
-            <input type="text" placeholder="Username" required></input>
+            <input type="text" placeholder="Username" required/>
           </div>
 
           <div className="input-box">
-            <input type="password" placeholder="Password" required></input>
+            <input type="password" placeholder="Password" required/>
           </div>
           <div className="input-box">
             <input
