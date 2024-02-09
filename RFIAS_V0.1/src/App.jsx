@@ -34,7 +34,7 @@ function Dashboard() {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                        <Link to='/signup' className="nav-link">Login</Link>
+                                        <Link to='/signup' className="nav-link">Signup</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link to='/' className="navbar-text nav-link active"
@@ -78,6 +78,7 @@ function Dashboard() {
                     <Route path='/salary' element={<Salary/>}></Route>
                     <Route path='/report' element={<Report/>}></Route>
                     <Route path='/signup' element={<Signup/>}></Route>
+                    <Route path='/login' element={<Login/>}></Route>
                 </Routes>
 
             </Router>
