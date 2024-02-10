@@ -7,6 +7,6 @@ import Signup from "./components/signup.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Signup/>
+    <Login/>
   </React.StrictMode>
 );
