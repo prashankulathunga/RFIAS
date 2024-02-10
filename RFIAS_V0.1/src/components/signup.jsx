@@ -2,8 +2,8 @@
 function Signup(){
   return (
     <div className="wrapper">
-      <div class="screen">
-        <div class="screen__content">
+      <div className="screen">
+        <div className="screen__content">
       <form action="">
         <h1> Signup</h1>
         <div className="inputbox">
@@ -21,7 +21,7 @@ function Signup(){
         </div>
        
 
-        <button type="submit" class="button" role="button">Register</button>
+        <button type="submit" className="button" role="button">Register</button>
        <br></br>
 
         <div className="backtologin">
@@ -32,11 +32,11 @@ function Signup(){
 
       </form>
       </div>
-      <div class="screen__background">
-          <span class="screen__background__shape screen__background__shape4"></span>
-          <span class="screen__background__shape screen__background__shape3"></span>
-          <span class="screen__background__shape screen__background__shape2"></span>
-          <span class="screen__background__shape screen__background__shape1"></span>
+      <div className="screen__background">
+          <span className="screen__background__shape screen__background__shape4"></span>
+          <span className="screen__background__shape screen__background__shape3"></span>
+          <span className="screen__background__shape screen__background__shape2"></span>
+          <span className="screen__background__shape screen__background__shape1"></span>
         </div>
     
     </div>
