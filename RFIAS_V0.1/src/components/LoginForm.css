@@ -2,6 +2,8 @@
 
 body{
     padding-top: 0px;
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);	
+    height: fit-content;
     
 }
 
