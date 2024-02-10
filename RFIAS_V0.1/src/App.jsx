@@ -3,6 +3,8 @@ import Attendance from './components/attendance.jsx'
 import Employee from './components/employee.jsx'
 import Report from './components/reports.jsx'
 import Signup from './components/signup.jsx'
+import LoginForm from './components/LoginForm.jsx'
+
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route, Link,} from "react-router-dom";
