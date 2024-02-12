@@ -1,3 +1,4 @@
+import "./LoginForm.css";
 
 function Signup(){
   return (
