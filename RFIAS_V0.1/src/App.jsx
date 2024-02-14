@@ -95,6 +95,7 @@ function Dashboard() {
           <Route path="/report" element={<Report />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          
         </Routes>
       </Router>
     </>
