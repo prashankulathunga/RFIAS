@@ -1,0 +1,107 @@
+body{
+    background: rgb(237, 237, 237);
+    padding:0%
+}
+
+.stats{
+    margin-top: 20px;
+    display: flex;
+}
+
+.box{
+    position: relative;
+    flex: 1;
+    background-color:rgb(255, 255, 255);
+    border-radius: 8px;
+    border-color: black;
+    border-style: ridge;
+    padding: 1%;
+    margin: 20px;
+    width: 13%;
+    height: 100px;
+    float: left;
+    border-width: 1px;
+}
+
+
+#statmaintext{
+    padding: 0%;
+    margin: 0%;
+    text-align: left;
+    color: rgb(86, 86, 200);
+    font-size: 20px;
+}
+
+#statbottomtext{
+    font-weight: bold;
+    text-align: right;
+}
+
+.filesubmit h3{
+    margin-top: 150px;
+    clear: left;
+    padding: 0%;
+    color: rgb(86, 86, 200);
+}
+
+.filesubmit{
+    padding: 0%;
+    margin: 0%;
+    margin-left: 10%;
+}
+.dropzone{
+    border-style: solid;
+    border-color: rgb(199, 198, 198);
+    width: 50%;
+    height: 70px;
+    background-color: #fff;
+   
+}
+.dropzone p{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.dropzone button{
+   float: right;
+   margin-top: 0%;
+   
+}
+
+.action button{
+    background-color: rgb(167, 110, 23);
+}
+
+.selectupload{
+background-color: rgb(6, 158, 72);
+color: aliceblue;
+border-radius: 8px;
+border: 0;
+padding: 6px;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.selectcancel{
+    margin-left: 100px;
+    background-color: rgb(242, 51, 34);
+    color: aliceblue;
+    border-radius: 8px;
+    border: 0;
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;   
+}
+.researchoverview{
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+background-color: #fff;
+border-radius: 10px;
+}
+
+.researchoverview h1{
+    color: rgb(86, 86, 200);
+    font-size: 20px;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
