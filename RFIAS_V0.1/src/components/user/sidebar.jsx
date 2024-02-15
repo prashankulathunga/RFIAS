@@ -6,6 +6,7 @@ import {
   LoginOutlined,
   MailOutlined,
   SettingOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
 import { Divider, Menu, Switch } from 'antd';
 function getItem(label, key, icon, children) {
@@ -17,11 +18,11 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Dashboard', '1', <LinkOutlined />),
+  getItem('Profile', '1', <UserOutlined />),
   getItem('Research report', '2', <MailOutlined />),
   getItem('Apply Leave', '2', <AppstoreOutlined />),
   getItem('Calander', '4', <CalendarOutlined />),
-  getItem('Log Out', '5', <LoginOutlined />),
+  getItem('Log Out', '5', <LoginOutlined /> ),
 
 
 ];
