@@ -1,4 +1,6 @@
-
+body{
+    background-color: #fff;
+}
 .layout1{
     height: auto;
     width: 100%;
@@ -16,3 +18,109 @@
     border-style: ridge;
 
 }
+
+.leaveformdetail{
+
+}
+.Leaveoverview{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.Leaveoverview h2{
+    clear: left;
+    color: rgb(86, 86, 200);
+    font-size: 24px;
+    padding: 20px;
+}
+
+.leaveinput{
+    margin: 30px;
+}
+
+.firstrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.leaveformdetail h1{
+    clear: left;
+    color: rgb(86, 86, 200);
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.firstrow{
+    float: left;
+}
+
+.secondrow{
+   float: left;
+}
+.secondrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    
+}
+
+.thirdrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 65%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.fourthrow{
+margin-left: 60%;
+}
+::placeholder{
+    color: black;
+}
+
+.page{
+    background-color: #f3f3f3;
+}
+
+/* leave page boxes */
+.leave-box{
+    position: relative;
+    flex: 1;
+    background-color:rgb(255, 255, 255);
+    border-radius: 8px;
+    border-color: black;
+    border-style: ridge;
+    padding: 1%;
+    margin: 20px;
+    width: 20%;
+    height: 150px;
+    float: left;
+    border-width: 0px;
+    margin-left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+

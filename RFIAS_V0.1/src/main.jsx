@@ -13,6 +13,6 @@ import BasicExample from "./components/user/structure.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BasicExample />
+    <Udashboard />
   </React.StrictMode>
 );

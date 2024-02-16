@@ -1,51 +1,73 @@
 import Table from "react-bootstrap/Table";
+import { Button } from "react-bootstrap";
+import "./allcss.css"
+import Form from 'react-bootstrap/Form';
 function Leave() {
   return (
     <div className="page">
-      <div className="stas">
-        <div className="box">
+      <div className="leavepg boxes">
+        <div className="leave-box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Complete</h3>
-            <p id="statbottomtext">05</p>
+            <h3 id="statmaintext"> Casual Leave</h3>
+            <br/>
+            <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
+            
           </i>
         </div>
-        <div className="box">
+        <div className="leave-box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Running</h3>
-            <p id="statbottomtext">02</p>
+            <h3 id="statmaintext"> Sick Leave</h3>
+            <br/>
+            <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
           </i>
         </div>
-        <div className="box">
+        <div className="leave-box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Total Research </h3>
-            <p id="statbottomtext">05</p>
-          </i>
-        </div>
-        <div className="box">
-          <i className="uli-file">
-            <h3 id="statmaintext"> Hold</h3>
-            <p id="statbottomtext">05</p>
+            <h3 id="statmaintext"> All Leave </h3>
+            <br/>
+            <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
           </i>
         </div>
       </div>
+      
 
-      <div className="formdetail">
+      <div className="leaveformdetail">
         <h1>Request Leave </h1>
+        <div className="leaveinput">
+        <div className="firstrow">
+        <input type="text" id="leaveinput" placeholder="Request Date MM/DD/YYYY" onFocus={"(this.type=''date')"} onBlur={"(this.type='text')"}/>
+        <input type="text" id="leaveinput" placeholder="Leave type" />
 
-        <input type="date" id="requstdate" placeholder="Request Date" />
-        <input type="text" id="leavetype" placeholder="Leave type" />
-        <input type="date" id="leaveto" placeholder="Leave To" />
-        <input type="date" id="leavefrom" placeholder="Leave From" />
-        <input type="text" id="reason" placeholder="Reason for leave" />
+        </div>
+
+        <div className="secondrow">
+        <input type="text" id="leaveinput" placeholder="Leave To MM/DD/YYYY" onFocus={"(this.type=''date')"} onBlur={"(this.type='text')"}/>
+        <input type="text" id="leaveinput" placeholder="Leave From MM/DD/YYYY" onFocus={"(this.type=''date')"} onBlur={"(this.type='text')"}/>
+
+        </div>
+        <div className="thirdrow">
+        <input type="text" id="leaveinput" placeholder="Reason for leave" />
+
+        </div>
+        
+        
         <br></br>
 
-        <button type="submit" id="submitleave">
-          {" "}
-          submit{" "}
-        </button>
+
+
+        <div className="fourthrow">
+        <Button type="submit" variant="outline-primary" className="submitleave">Submit</Button>{' '}
+
+        </div>
+
+        </div>
+
+       
       </div>
+      <br />
 
       <div className="Leaveoverview">
+        <h2>Leave Request Overveiw</h2>
         <Table id="leaveoverveiwtable" responsive striped border hover>
           <thead>
             <tr>
