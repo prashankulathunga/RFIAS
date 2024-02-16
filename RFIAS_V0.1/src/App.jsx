@@ -1,4 +1,4 @@
-import Home from "./components/home.jsx";
+import Udashboard from "./components/user/userdashboard.jsx";
 import Attendance from "./components/attendance.jsx";
 import Employee from "./components/employee.jsx";
 import Report from "./components/reports.jsx";
@@ -37,17 +37,12 @@ function Dashboard() {
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                   <li className="nav-item">
-                    <Link to="/signup" className="nav-link">
-                      Signup
-                    </Link>
-                  </li>
-                  <li className="nav-item">
                     <Link
                       to="/"
                       className="navbar-text nav-link active"
                       aria-current="page"
                     >
-                      Home
+                      Profile
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -88,7 +83,7 @@ function Dashboard() {
         </div>
 
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Udashboard />}></Route>
           <Route path="/attendance" element={<Attendance />}></Route>
           <Route path="/employee" element={<Employee />}></Route>
           <Route path="/salary" element={<Salary />}></Route>
