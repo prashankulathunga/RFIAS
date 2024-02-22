@@ -1,137 +1,386 @@
-import {Avatar, Button, TextField} from "@mui/material";
+import {
+    Button,
+    Card,
+    Col,
+    DatePicker,
+    Divider,
+    Form,
+    Input,
+    Modal,
+    Row,
+    Select,
+    Space,
+    Table,
+    Tag,
+    TimePicker, Upload
+} from "antd";
+import React, {useState} from "react";
+import {faker} from "@faker-js/faker";
+import {ButtonGroup} from "react-bootstrap";
+import {AiTwotoneDelete} from "react-icons/ai";
 
 function Report() {
+
+    const [modelReg, setModalReg] = useState(false);
+    const [modelUpd, setModalUpd] = useState(false);
+
+    const showModelReg = () => setModalReg(true);
+    const showModelUpd = () => setModalUpd(true);
+    const onCancelReg = () => setModalReg(false);
+    const onCancelUpd = () => setModalUpd(false);
+
+    const dateChange = (date, dateString) => {
+        console.log(date, dateString);
+    }
+    const empData = () => {
+        const dat = [];
+
+        for (let i = 0; i < 34; i++) {
+            dat.push({
+                reportId: faker.datatype.number(100),
+                reportTitle: faker.lorem.sentence(),
+                reportDes: faker.lorem.lines(),
+                repFile: faker.image.abstract(1234, 2345),
+
+            })
+
+        }
+        return dat;
+    }
+    const generateData = empData();
+
+
+
     return (
 
         <>
-            <br/>
-            <div className="container">
 
-                <div className="employee-header col-12 col-sm-6">
-                    <h5>+ Add Report</h5>
-                </div>
-                <hr className='col-3'/>
+            <Row gutter={12}>
+                <Col span={24}>
 
-                <form>
-                    <div className="row">
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='number' id='rportTitle' label='Report ID'
-                                           placeholder='ex:101'
-                                           helperText='Please insert report id' required/>
+                    <Card className='shadow-outer empCard-outer'>
+
+                        <Modal centered open={modelReg} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelReg} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Add Research Report </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Report ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Report ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Report Title'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='Report Title'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "50%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Report Description'>
+                                                            <Input.TextArea variant='filled'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Report File' name='Report File'>
+                                                            <Upload>
+                                                                <Button type='link'>Upload Report File</Button>
+                                                            </Upload>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Add
+                                                            Report</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='rportTitle' label='Report Title'
-                                           placeholder='ex:power plant'
-                                           helperText='Please insert report title' required/>
+
+                        <Modal centered open={modelUpd} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelUpd} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Update Research Report </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Report ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Report ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Report Title'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='Report Title'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "50%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Report Description'>
+                                                            <Input.TextArea variant='filled'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Report File' name='Report File'>
+                                                            <Upload>
+                                                                <Button type='link'>Upload Report File</Button>
+                                                            </Upload>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Update
+                                                            Report</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='Date' id='repDate'
-                                           helperText='Please choose Date' required/>
-                            </div>
-                        </div>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='file' id='rportFile'
-                                           helperText='Please choose file' required/>
-                            </div>
-                        </div>
+                        <Row>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='rportTitle' label='Note'
-                                           placeholder='ex:power plant'
-                                           helperText='Insert any note'/>
-                            </div>
-                        </div>
+                            <Col span={24}>
 
-                    </div>
+                                <div className="button-group-outer">
 
-                    <div className="row">
-                        <div className="col-12 savEmpBtn">
-                            <Button className='col-12' variant="contained">Save Report</Button>
-                        </div>
-                    </div>
+                                    <Button type='primary' size='default' onClick={showModelReg}>Add Report</Button>
+                                    <Button className='but-success' type='primary' onClick={showModelUpd}
+                                            size='default'>Update Report</Button>
 
-                    <hr/>
-                    <br/>
-
-                    <div className="allEmpHeader col-12 col-sm-6">
-                        <h5>All Reports</h5>
-                    </div>
-                    <hr className='col-3'/>
-
-                    <div className="row">
-                        <div className="search-outer col-12">
-                            <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchRport' label="Search Report ID"
-                                               variant="standard"
-                                               size='small'
-                                               placeholder='search here'/>
                                 </div>
+                            </Col>
+                        </Row>
+
+                        <Divider orientation="left">
+                            <div className="tblText">
+                                <h6>All Research Reports</h6>
                             </div>
+                        </Divider>
+                        <br/>
+
+                        <div className="tbl-inner">
+
+                            <Table dataSource={generateData} columns={[
+                                {
+                                    dataIndex: 'reportId',
+                                    title: 'Report ID',
+                                    key: 'reportId'
+                                },
+                                {
+                                    dataIndex: 'reportTitle',
+                                    title: 'Title',
+                                    key: 'reportTitle'
+                                },
+                                {
+                                    dataIndex: 'reportDes',
+                                    title: 'Description',
+                                    key: 'reportDes'
+                                },
+                                {
+                                    dataIndex: 'repDate',
+                                    title: 'Submission Date',
+                                    key: 'repDate'
+                                },
+                                {
+                                    dataIndex: 'repFile',
+                                    title: 'Report File',
+                                    key: 'repFile'
+                                },
+                                {
+                                    title: 'Remove Details',
+                                    render: ()=> (
+                                        <ButtonGroup>
+                                            <Button type='primary' danger size='small'> <AiTwotoneDelete  className='btn-delete' /> Remove </Button>
+                                        </ButtonGroup>
+
+                                    )
+                                },
+                            ]}></Table>
                         </div>
 
-                    </div>
 
-                </form>
+                    </Card>
 
-                <div className=" table-outer col-12">
-                    <div className="table-wrapper">
-                        <table className='table table-hover col-12'>
-                            <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Any Note</th>
-                                <th scope="col">Report</th>
-                                <th scope="col">Options</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>001</td>
-                                <td>Power Plant</td>
-                                <td>20/03/2024</td>
-                                <td>NULL</td>
-                                <td>File</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>002</td>
-                                <td>Virus-UXI</td>
-                                <td>07/01/2022</td>
-                                <td>NULL</td>
-                                <td>File</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
+                </Col>
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+
+            </Row>
+
 
         </>
 

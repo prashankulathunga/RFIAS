@@ -1,236 +1,685 @@
-import {
-    Avatar,
-    Button,
-    FormControl,
-    FormControlLabel, FormHelperText,
-    FormLabel,
-    InputLabel, MenuItem,
-    Radio,
-    RadioGroup,
-    Select,
-    TextField
-} from "@mui/material";
+import {Card, Col, DatePicker, Divider, Form, Input, Modal, Row, Steps, Table, Upload} from "antd";
+import {Button} from 'antd';
+import {faker} from "@faker-js/faker";
+import React, {useState} from "react";
+import {Radio} from 'antd';
+import {Select, Space} from 'antd';
+import {ButtonGroup} from "react-bootstrap";
+import {TiDelete} from "react-icons/ti";
+import {AiTwotoneDelete} from "react-icons/ai";
 
 function Employee() {
+
+    const valuesName = [
+        {
+            label: 'Male',
+            value: 'Male',
+            title: 'Male',
+        },
+        {
+            label: 'Female',
+            value: 'Female',
+            title: 'Female',
+        }
+    ]
+
+    const [modelReg, setModalReg] = useState(false);
+    const [modelUpd, setModalUpd] = useState(false);
+    const [radioValue, setradioValue] = useState('Male');
+    const [stepsChange, setStepsChange] = useState(0);
+
+    const showModelReg = () => setModalReg(true);
+    const showModelUpd = () => setModalUpd(true);
+    const onCancelReg = () => setModalReg(false);
+    const onCancelUpd = () => setModalUpd(false);
+
+    const radioChange = ({target: {value}}) => {
+        setradioValue(value);
+    }
+
+    const dateChange = (date, dateString) => {
+        console.log(date, dateString);
+    }
+
+    const desiSelector = (value) => {
+        console.log(value);
+    }
+
+    const empData = () => {
+        const dat = [];
+
+        for (let i = 0; i < 34; i++) {
+            dat.push({
+                empid: faker.datatype.number(1000),
+                empnic: faker.datatype.number(100000000),
+                empname: faker.name.fullName(),
+                empgender: faker.person.sexType(),
+                empdob: faker.date.birthdate(),
+                empmail: faker.internet.email(),
+                empphone: faker.datatype.number(1000000000),
+                empaddress: faker.address.city(),
+                empdesi: faker.helpers.arrayElement(['researcher', 'professor'])
+
+            })
+
+        }
+        return dat;
+    }
+    const generateData = empData();
+
+
     return (
         <>
-            <br/>
-            <div className="container">
+            <Row gutter={12}>
+                <Col span={24}>
 
-                <div className="employee-header col-12 col-sm-6">
-                    <h5>+ Add New Researcher</h5>
-                </div>
-                <hr className='col-3'/>
-                <form>
-                    <div className="row">
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empNic' label='Employee NIC'
-                                           placeholder='ex:200213398V'
-                                           helperText='Please insert NIC number' required/>
+
+                    <Card className='shadow-outer empCard-outer'>
+
+                        <Modal centered open={modelReg} okButtonProps={{ style: { display: 'none' } }} onCancel={onCancelReg} width={1600}>
+
+                            <div className="model-inner-emp">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Register Employee </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled' placeholder='Employee ID' />
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee NIC'>
+                                                            <Input type='text' variant='filled' placeholder='Employee NIC'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='First Name'>
+                                                            <Input type='text' variant='filled' placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Last Name'>
+                                                            <Input type='text' variant='filled' placeholder='Last Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Gender'>
+
+                                                            <Radio.Group options={valuesName} size='small'
+                                                                         onChange={radioChange}
+                                                                         value={radioValue}
+                                                                         optionType="button"
+                                                                         buttonStyle="solid"
+                                                            />
+
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date Of Birth'>
+                                                                <DatePicker variant='filled' onChange={dateChange} placeholder='Select Birth Date' />
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Email'>
+                                                            <Input type='email' variant='filled' placeholder='Email Address'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Phone'>
+                                                            <Input type='number' variant='filled' placeholder='Phone Number'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Street'>
+                                                            <Input type='text' variant='filled' placeholder='Street'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='City'>
+                                                            <Input type='text' variant='filled' placeholder='City'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Postal Code'>
+                                                            <Input type='number' variant='filled' placeholder='Postal Code'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Designation'>
+                                                            <Select variant='filled'
+                                                                defaultValue='Select Designation'
+                                                                onChange={desiSelector}
+                                                                options={[
+                                                                    {
+                                                                        value: 'selectDesignation',
+                                                                        label: 'Select Designation',
+                                                                        disabled: true
+                                                                    },
+                                                                    {
+                                                                        value: 'researcher',
+                                                                        label: 'Researcher',
+                                                                    },
+                                                                    {
+                                                                        value: 'professor',
+                                                                        label: 'Professor',
+                                                                    },
+                                                                ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Profile Picture' name='Profile Picture'>
+                                                            <Upload>
+                                                                <Button type='link'>Upload Profile Picture</Button>
+                                                            </Upload>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Register</Button>
+
+
+                                                    </div>
+
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empFName' label='First Name'
-                                           placeholder='ex:Prashan'
-                                           helperText='Please insert first name' required/>
+
+
+                        <Modal centered open={modelUpd} okButtonProps={{ style: { display: 'none' } }} onCancel={onCancelUpd} width={1600}>
+
+                            <div className="model-inner-emp">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Update Employee </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled' placeholder='Employee ID' />
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee NIC'>
+                                                            <Input type='text' variant='filled' placeholder='Employee NIC'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='First Name'>
+                                                            <Input type='text' variant='filled' placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Last Name'>
+                                                            <Input type='text' variant='filled' placeholder='Last Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Gender'>
+
+                                                            <Radio.Group options={valuesName} size='small'
+                                                                         onChange={radioChange}
+                                                                         value={radioValue}
+                                                                         optionType="button"
+                                                                         buttonStyle="solid"
+                                                            />
+
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date Of Birth'>
+                                                                <DatePicker variant='filled' onChange={dateChange} placeholder='Select Birth Date' />
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Email'>
+                                                            <Input type='email' variant='filled' placeholder='Email Address'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Phone'>
+                                                            <Input type='number' variant='filled' placeholder='Phone Number'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Street'>
+                                                            <Input type='text' variant='filled' placeholder='Street'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='City'>
+                                                            <Input type='text' variant='filled' placeholder='City'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Postal Code'>
+                                                            <Input type='number' variant='filled' placeholder='Postal Code'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Designation'>
+                                                            <Select variant='filled'
+                                                                    defaultValue='Select Designation'
+                                                                    onChange={desiSelector}
+                                                                    options={[
+                                                                        {
+                                                                            value: 'selectDesignation',
+                                                                            label: 'Select Designation',
+                                                                            disabled: true
+                                                                        },
+                                                                        {
+                                                                            value: 'researcher',
+                                                                            label: 'Researcher',
+                                                                        },
+                                                                        {
+                                                                            value: 'professor',
+                                                                            label: 'Professor',
+                                                                        },
+                                                                    ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "20%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Profile Picture' name='Profile Picture'>
+                                                            <Upload>
+                                                                <Button type='link'>Upload Profile Picture</Button>
+                                                            </Upload>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Update</Button>
+
+
+                                                    </div>
+
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empLName' label='Last Name'
-                                           placeholder='ex:Kulathunga'
-                                           helperText='Please insert last name' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
-                                <RadioGroup
-                                    row
-                                    aria-labelledby="demo-row-radio-buttons-group-label"
-                                    name="row-radio-buttons-group">
-                                    <FormControlLabel value="male" control={<Radio/>} label="Male"/>
-                                    <FormControlLabel value="female" control={<Radio/>} label="Female"/>
-                                </RadioGroup>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='Date' id='empDob'
-                                           helperText='Please choose Birth Date' required/>
-                            </div>
-                        </div>
+                        </Modal>
 
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='email' id='empEMail' label='E Mail'
-                                           placeholder='ex:p@183gmail.com'
-                                           helperText='Please insert email address' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='number' id='empNumber' label='Mobile Number'
-                                           placeholder='ex:077-8506262'
-                                           helperText='Please insert mobile number' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empAdStreet' label='Street'
-                                           placeholder='ex:No:26, Sampathwatta'
-                                           helperText='Please insert street' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empAdCity' label='City'
-                                           placeholder='ex:Embilipitiya'
-                                           helperText='Please insert city' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empAdPostCode' label='Postal Code'
-                                           placeholder='ex:70200'
-                                           helperText='Please insert postal code' required/>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">Designation</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        label="Designation">
-                                        <MenuItem defaultValue="">None</MenuItem>
-                                        <MenuItem value='Researcher'>Researcher</MenuItem>
-                                        <MenuItem value='Professor'>Professor</MenuItem>
-                                    </Select>
-                                    <FormHelperText>Please select designation</FormHelperText>
-                                </FormControl>
-                            </div>
-                        </div>
-
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='file' id='rportFile'
-                                           helperText='Please choose image' required/>
-                            </div>
-                        </div>
-
-                    </div>
 
 
-                    <div className="row">
-                        <div className="col-12 savEmpBtn">
-                            <Button className='col-12' variant="contained">Save Researcher</Button>
-                        </div>
-                    </div>
 
-                    <hr/>
-                    <br/>
+                        <Row>
 
-                    <div className="allEmpHeader col-12 col-sm-6">
-                        <h5>All Researchers</h5>
-                    </div>
-                    <hr className='col-3'/>
+                            <Col span={24}>
 
-                    <div className="row">
-                        <div className="search-outer col-12">
-                            <div className="col-12 col-sm-6 col-md-4">
-                                <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchEmp' label="Search Resercher's NIC" variant="standard"
-                                               size='small'
-                                               placeholder='search here'/>
+                                <div className="button-group-outer">
+
+                                    <Button type='primary' size='default' onClick={showModelReg}>Registration</Button>
+                                    <Button className='but-success' type='primary' onClick={showModelUpd} size='default'>Update Employee</Button>
+
                                 </div>
+                            </Col>
+                        </Row>
+
+                        <Divider orientation="left">
+                            <div className="tblText">
+                                <h6>All Employees </h6>
                             </div>
+                        </Divider>
+                        <br/>
+
+                        <div className="tbl-inner">
+
+                            <Table dataSource={generateData} columns={[
+                                {
+                                    dataIndex: 'empid',
+                                    title: 'Employee ID',
+                                    key: 'empid'
+                                },
+                                {
+                                    dataIndex: 'empnic',
+                                    title: 'NIC',
+                                    key: 'empnic'
+                                },
+                                {
+                                    dataIndex: 'empname',
+                                    title: 'Name',
+                                    key: 'empname'
+                                },
+                                {
+                                    dataIndex: 'empgender',
+                                    title: 'Gender',
+                                    key: 'empgender'
+                                },
+                                {
+                                    dataIndex: 'empdob',
+                                    title: 'Dob',
+                                    key: 'empdob'
+                                },
+                                {
+                                    dataIndex: 'empmail',
+                                    title: 'Email',
+                                    key: 'empmail'
+                                },
+                                {
+                                    dataIndex: 'empphone',
+                                    title: 'Phone',
+                                    key: 'empphone'
+                                },
+                                {
+                                    dataIndex: 'empaddress',
+                                    title: 'Address',
+                                    key: 'empaddress'
+                                },
+                                {
+                                    dataIndex: 'empdesi',
+                                    title: 'Designation',
+                                    key: 'empdesi'
+                                },
+                                {
+                                    title: 'Remove Details',
+                                    render: ()=> (
+                                        <ButtonGroup>
+                                            <Button type='primary' danger size='small'> <AiTwotoneDelete className='btn-delete' /> Remove </Button>
+                                        </ButtonGroup>
+
+                                    )
+                                },
+
+                            ]}></Table>
                         </div>
 
-                    </div>
-                </form>
+
+                    </Card>
 
 
-                <div className=" table-outer col-12">
-                    <div className="table-wrapper">
-                        <table className='table table-hover col-12'>
-                            <thead>
-                            <tr>
-                                <th scope='col'></th>
-                                <th scope="col">Nic</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Dob</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Designation</th>
-                                <th scope="col">Options</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            <tr>
-                                <td><Avatar>SA</Avatar></td>
-                                <td>2002651725971V</td>
-                                <td>Siyadoris Appuhami</td>
-                                <td>Male</td>
-                                <td>20/06/1980</td>
-                                <td>notysiyadoris@gmail.com</td>
-                                <td>077-5348641</td>
-                                <td>Colombo,Sri Lanka</td>
-                                <td>Researcher</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><Avatar>NM</Avatar></td>
-                                <td>2002651065971V</td>
-                                <td>Noty Madu</td>
-                                <td>Female</td>
-                                <td>08/11/1993</td>
-                                <td>madu123@gmail.com</td>
-                                <td>077-5375839</td>
-                                <td>Panadura,Sri Lanka</td>
-                                <td>Researcher</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
+                </Col>
 
 
-                        </table>
-                    </div>
-                </div>
-
-
-            </div>
-
+            </Row>
         </>
-    );
+    )
+        ;
+
+
 }
 
 export default Employee;

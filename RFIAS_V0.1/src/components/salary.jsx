@@ -1,167 +1,507 @@
-import {Avatar, Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField} from "@mui/material";
+import {
+    Button,
+    Card,
+    Col,
+    DatePicker,
+    Divider,
+    Form,
+    Input,
+    Modal,
+    Row,
+    Select,
+    Space,
+    Table,
+    Tag,
+    TimePicker
+} from "antd";
+import React, {useState} from "react";
+import {faker} from "@faker-js/faker";
+import {ButtonGroup} from "react-bootstrap";
+import {AiTwotoneDelete} from "react-icons/ai";
 
 function Salary(){
 
+    const [modelReg, setModalReg] = useState(false);
+    const [modelUpd, setModalUpd] = useState(false);
+
+    const showModelReg = () => setModalReg(true);
+    const showModelUpd = () => setModalUpd(true);
+    const onCancelReg = () => setModalReg(false);
+    const onCancelUpd = () => setModalUpd(false);
+
+    const dateChange = (date, dateString) => {
+        console.log(date, dateString);
+    }
+    const timeChange = (time, timeString) => {
+        console.log(time, timeString);
+    };
+
+    const desiSelector = (value) => {
+        console.log(value);
+    }
+    const empData = () => {
+        const dat = [];
+
+        for (let i = 0; i < 34; i++) {
+            dat.push({
+                empid: faker.datatype.number(1000),
+                empname: faker.name.fullName(),
+                salAmount: faker.datatype.number(100000),
+                salMonth: faker.date.month(),
+
+            })
+
+        }
+        return dat;
+    }
+    const generateData = empData();
+
     return(
+
         <>
-            <br/>
-            <div className="container">
-
-                <div className="employee-header col-12 col-sm-6">
-                    <h5>+ Add Salary</h5>
-                </div>
-                <hr className='col-3'/>
+            <Row gutter={12}>
+                <Col span={24}>
 
 
-                <form>
-                    <div className="row">
+                    <Card className='shadow-outer empCard-outer'>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empNic' label='Employee NIC'
-                                           placeholder='ex:200213398V'
-                                           helperText='Please insert NIC number' required/>
+                        <Modal centered open={modelReg} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelReg} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Set Employee Salary </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Employee ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Name'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Salary Amount'>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Salary Amount'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Salary Month'>
+                                                            <Select variant='filled'
+                                                                    defaultValue='Select Month'
+                                                                    onChange={desiSelector}
+                                                                    options={[
+                                                                        {
+                                                                            value: 'selectMonth',
+                                                                            label: 'Select Month',
+                                                                            disabled: true
+                                                                        },
+                                                                        {
+                                                                            value: 'january',
+                                                                            label: 'January',
+                                                                        },
+                                                                        {
+                                                                            value: 'february',
+                                                                            label: 'February',
+                                                                        },
+                                                                        {
+                                                                            value: 'march',
+                                                                            label: 'March',
+                                                                        },
+                                                                        {
+                                                                            value: 'april',
+                                                                            label: 'April',
+                                                                        },
+                                                                        {
+                                                                            value: 'may',
+                                                                            label: 'May',
+                                                                        },
+                                                                        {
+                                                                            value: 'june',
+                                                                            label: 'June',
+                                                                        },
+                                                                        {
+                                                                            value: 'july',
+                                                                            label: 'July',
+                                                                        },
+                                                                        {
+                                                                            value: 'august',
+                                                                            label: 'August',
+                                                                        },
+                                                                        {
+                                                                            value: 'september',
+                                                                            label: 'September',
+                                                                        },
+                                                                        {
+                                                                            value: 'october',
+                                                                            label: 'October',
+                                                                        },
+                                                                        {
+                                                                            value: 'november',
+                                                                            label: 'November',
+                                                                        },
+                                                                        {
+                                                                            value: 'december',
+                                                                            label: 'December',
+                                                                        },
+
+                                                                    ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Today Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Set Salary</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empName' label='Researcher Name'
-                                           disabled={true}/>
+
+                        <Modal centered open={modelUpd} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelUpd} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Update Employee Salary </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Employee ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Name'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Salary Amount'>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Salary Amount'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Salary Month'>
+                                                            <Select variant='filled'
+                                                                    defaultValue='Select Month'
+                                                                    onChange={desiSelector}
+                                                                    options={[
+                                                                        {
+                                                                            value: 'selectMonth',
+                                                                            label: 'Select Month',
+                                                                            disabled: true
+                                                                        },
+                                                                        {
+                                                                            value: 'january',
+                                                                            label: 'January',
+                                                                        },
+                                                                        {
+                                                                            value: 'february',
+                                                                            label: 'February',
+                                                                        },
+                                                                        {
+                                                                            value: 'march',
+                                                                            label: 'March',
+                                                                        },
+                                                                        {
+                                                                            value: 'april',
+                                                                            label: 'April',
+                                                                        },
+                                                                        {
+                                                                            value: 'may',
+                                                                            label: 'May',
+                                                                        },
+                                                                        {
+                                                                            value: 'june',
+                                                                            label: 'June',
+                                                                        },
+                                                                        {
+                                                                            value: 'july',
+                                                                            label: 'July',
+                                                                        },
+                                                                        {
+                                                                            value: 'august',
+                                                                            label: 'August',
+                                                                        },
+                                                                        {
+                                                                            value: 'september',
+                                                                            label: 'September',
+                                                                        },
+                                                                        {
+                                                                            value: 'october',
+                                                                            label: 'October',
+                                                                        },
+                                                                        {
+                                                                            value: 'november',
+                                                                            label: 'November',
+                                                                        },
+                                                                        {
+                                                                            value: 'december',
+                                                                            label: 'December',
+                                                                        },
+
+                                                                    ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Today Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Update
+                                                            Salary</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='Date' id='empAttDate'
-                                           helperText='Please choose Date' required/>
-                            </div>
-                        </div>
+                        <Row>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">Salary Month</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        label="Salary Month">
-                                        <MenuItem defaultValue="">None</MenuItem>
-                                        <MenuItem value='January'>January</MenuItem>
-                                        <MenuItem value='February'>February</MenuItem>
-                                        <MenuItem value='March'>March</MenuItem>
-                                        <MenuItem value='April'>April</MenuItem>
-                                        <MenuItem value='May'>May</MenuItem>
-                                        <MenuItem value='June'>June</MenuItem>
-                                        <MenuItem value='July'>July</MenuItem>
-                                        <MenuItem value='August'>August</MenuItem>
-                                        <MenuItem value='September'>September</MenuItem>
-                                        <MenuItem value='October'>October</MenuItem>
-                                        <MenuItem value='November'>November</MenuItem>
-                                        <MenuItem value='December'>December</MenuItem>
-                                    </Select>
-                                    <FormHelperText>Please select salary month</FormHelperText>
-                                </FormControl>
-                            </div>
-                        </div>
+                            <Col span={24}>
 
-                        <div className="col-12 col-sm-6 col-md-4">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='number' id='SalCount' label='Salary'
-                                           placeholder='ex:20000.00'
-                                           helperText='Please insert salary' required/>
-                            </div>
-                        </div>
+                                <div className="button-group-outer">
 
-                    </div>
+                                    <Button type='primary' size='default' onClick={showModelReg}>Set Salary</Button>
+                                    <Button className='but-success' type='primary' onClick={showModelUpd}
+                                            size='default'>Update Salary</Button>
 
-                    <div className="row">
-                        <div className="col-12 savEmpBtn">
-                            <Button className='col-12' variant="contained">Set Salary</Button>
-                        </div>
-                    </div>
-
-                    <hr/>
-                    <br/>
-
-                    <div className="allEmpHeader col-12 col-sm-6">
-                        <h5>All Salary Details</h5>
-                    </div>
-                    <hr className='col-3'/>
-
-                    <div className="row">
-                        <div className="search-outer col-12">
-                            <div className="col-12 col-sm-6 col-md-4">
-                                <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchEmp' label="Search Resercher's NIC"  variant="standard"
-                                               size='small'
-                                               placeholder='search here'/>
                                 </div>
+                            </Col>
+                        </Row>
+
+                        <Divider orientation="left">
+                            <div className="tblText">
+                                <h6>All Employees Salary Details</h6>
                             </div>
+                        </Divider>
+                        <br/>
+
+                        <div className="tbl-inner">
+
+                            <Table dataSource={generateData} columns={[
+                                {
+                                    dataIndex: 'empid',
+                                    title: 'Employee ID',
+                                    key: 'empid'
+                                },
+                                {
+                                    dataIndex: 'empname',
+                                    title: 'Name',
+                                    key: 'empname'
+                                },
+                                {
+                                    dataIndex: 'salAmount',
+                                    title: 'Salary Amount',
+                                    key: 'salAmount'
+                                },
+                                {
+                                    dataIndex: 'salMonth',
+                                    title: 'Salary Month',
+                                    key: 'salMonth'
+                                },
+                                {
+                                    dataIndex: 'salDate',
+                                    title: 'Date',
+                                    key: 'salDate'
+                                },
+                                {
+                                    title: 'Remove Details',
+                                    render: ()=> (
+                                        <ButtonGroup>
+                                            <Button type='primary' danger size='small'> <AiTwotoneDelete className='btn-delete' /> Remove </Button>
+                                        </ButtonGroup>
+
+                                    )
+                                },
+
+                            ]}></Table>
                         </div>
 
-                    </div>
-                </form>
+
+                    </Card>
 
 
-                <div className=" table-outer col-12">
-                    <div className="table-wrapper">
-                        <table className='table table-hover col-12'>
-                            <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Nic</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Salary Month</th>
-                                <th scope="col">Salary</th>
-                                <th scope="col">Options</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><Avatar>SA</Avatar></td>
-                                <td>2002651725971V</td>
-                                <td>Siyadoris Appuhami</td>
-                                <td>20/03/2024</td>
-                                <td>March</td>
-                                <td>45000.00</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><Avatar>NP</Avatar></td>
-                                <td>2002861725971V</td>
-                                <td>Notheris Appuhami</td>
-                                <td>07/01/2024</td>
-                                <td>January</td>
-                                <td>67000.00</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
+                </Col>
 
 
-                        </table>
-                    </div>
-                </div>
-
-
-
-            </div>
-
+            </Row>
         </>
+
     );
 
 }

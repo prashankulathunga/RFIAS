@@ -1,0 +1,167 @@
+.layout-outer {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header-outer {
+    background-color: white !important;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed !important;
+    padding-top: 42px !important;
+    padding-bottom: 32px !important;
+    z-index: 222;
+    width: 100%;
+    cursor: default;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    padding: 4px !important;
+}
+
+.header-inner > h4 {
+    font-weight: bold;
+    color: #4A4797;
+    margin-top: 8px;
+    margin-left: 32px;
+}
+
+.ham-outer > button {
+    border: none !important;
+    margin-left: -32px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #34495e;
+}
+
+.ham-outer > button:hover{
+    color: #bdc3c7;
+}
+
+.sider-outer {
+    position: fixed !important;
+    padding-top: 86px;
+    overflow: auto;
+    z-index: 111;
+    height: 100vh;
+}
+
+.content-outer {
+    background-color: whitesmoke !important;
+    padding: 100px 16px 24px 96px;
+    min-height: 100vh;
+}
+
+.ant-menu-item-selected {
+    background-color: #706db1 !important;
+    color: white !important;
+}
+
+.card-outer {
+    margin-bottom: 16px;
+    cursor: default;
+}
+
+.card-inner {
+    font-weight: bold;
+    font-size: 26px;
+    color: #4C489D;
+}
+
+.cardText-item {
+    font-size: 14px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.tblText > h6 {
+    color: #4C489D !important;
+    font-weight: 650;
+    font-size: 17px;
+}
+
+.tbl-outer {
+    margin-bottom: 16px;
+}
+
+.tbl-inner {
+    overflow-x: auto;
+}
+
+.cht-outer {
+    margin-bottom: 16px;
+}
+
+.shadow-outer {
+    box-shadow: 2px 2px 6px gainsboro !important;
+}
+
+.empty-margin {
+    margin-bottom: 16px;
+}
+
+.empCard-outer {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.button-group-outer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.button-group-outer > button {
+    box-shadow: 2px 2px 6px gainsboro !important;
+    font-weight: 600;
+}
+
+.but-success {
+    background-color: #2ecc71 !important;
+}
+
+.model-inner-emp {
+    min-height: 56vh;
+    padding: 50px 0;
+}
+
+.model-inner-attend {
+    min-height: 38vh;
+    padding: 50px 0;
+}
+
+.input-outer {
+    margin-top: 4px;
+}
+
+.inputForm-outer {
+    padding: 52px;
+}
+
+.btnNext {
+    width: 100%;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 88px;
+    gap: 10px;
+}
+
+.btnNext > Button {
+    padding: 4px 24px;
+}
+.btn-delete{
+    margin-right: 4px;
+    font-size: 16px;
+}
+.btn-group-outer{
+    gap: 8px;
+}

@@ -1,144 +1,430 @@
-import {Avatar, Button, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField} from "@mui/material";
+import {Card, Col, DatePicker, Divider, Form, Input, Modal, Row, Steps, Table, Tag, TimePicker, Upload} from "antd";
+import {Button} from 'antd';
+import {faker} from "@faker-js/faker";
+import React, {useState} from "react";
+import {Select, Space} from 'antd';
+import dayjs from "dayjs";
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import {ButtonGroup} from "react-bootstrap";
+import {TiDelete} from "react-icons/ti";
+import {AiTwotoneDelete} from "react-icons/ai";
+dayjs.extend(customParseFormat);
 
-function Attendance(){
-    return(
+function Attendance() {
+
+    const [modelReg, setModalReg] = useState(false);
+    const [modelUpd, setModalUpd] = useState(false);
+
+    const showModelReg = () => setModalReg(true);
+    const showModelUpd = () => setModalUpd(true);
+    const onCancelReg = () => setModalReg(false);
+    const onCancelUpd = () => setModalUpd(false);
+
+    const dateChange = (date, dateString) => {
+        console.log(date, dateString);
+    }
+    const timeChange = (time, timeString) => {
+        console.log(time, timeString);
+    };
+
+    const desiSelector = (value) => {
+        console.log(value);
+    }
+    const empData = () => {
+        const dat = [];
+
+        for (let i = 0; i < 34; i++) {
+            dat.push({
+                empid: faker.datatype.number(1000),
+                empname: faker.name.fullName(),
+                atStatus: Math.random() > 0.5 ? true : false
+
+            })
+
+        }
+        return dat;
+    }
+    const generateData = empData();
+
+
+    return (
         <>
-            <br/>
-            <div className="container">
+            <Row gutter={12}>
+                <Col span={24}>
 
-                <div className="employee-header col-12 col-sm-6">
-                    <h5>+ Mark Attendance</h5>
-                </div>
-                <hr className='col-3'/>
 
-                <form>
-                    <div className="row">
+                    <Card className='shadow-outer empCard-outer'>
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empNic' label='Employee NIC'
-                                           placeholder='ex:200213398V'
-                                           helperText='Please insert NIC number' required/>
+                        <Modal centered open={modelReg} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelReg} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Mark Employee Attendance </h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Employee ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Name'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Attendence'>
+                                                            <Select variant='filled'
+                                                                    defaultValue='Select Attendance'
+                                                                    onChange={desiSelector}
+                                                                    options={[
+                                                                        {
+                                                                            value: 'selectAttendance',
+                                                                            label: 'Select Attendance',
+                                                                            disabled: true
+                                                                        },
+                                                                        {
+                                                                            value: 'onTime',
+                                                                            label: 'On Time',
+                                                                        },
+                                                                        {
+                                                                            value: 'late',
+                                                                            label: 'Late',
+                                                                        },
+                                                                        {
+                                                                            value: 'absent',
+                                                                            label: 'Absent',
+                                                                        },
+
+                                                                    ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Reporting Time'>
+                                                        <TimePicker onChange={timeChange} changeOnScroll variant='filled'
+                                                                    needConfirm={false}/>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Mark
+                                                            Attendance</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='text' id='empName' label='Researcher Name'
-                                           disabled={true}/>
+
+                        <Modal centered open={modelUpd} okButtonProps={{style: {display: 'none'}}}
+                               onCancel={onCancelUpd} width={1600}>
+
+                            <div className="model-inner-attend">
+                                <Row>
+
+                                    <Col span={24}>
+
+                                        <Divider orientation="left">
+                                            <div className="tblText">
+                                                <h6> Update Employee Attendance</h6>
+                                            </div>
+                                        </Divider>
+                                        <br/>
+                                    </Col>
+
+                                    <div className="inputForm-outer">
+
+                                        <Form>
+
+                                            <Row gutter={24}>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Employee ID' name='empid' rules={[
+                                                            {
+                                                                required: true,
+                                                                message: 'insert employee id',
+                                                            },
+                                                        ]}>
+                                                            <Input type='number' variant='filled'
+                                                                   placeholder='Employee ID'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Name'>
+                                                            <Input type='text' variant='filled'
+                                                                   placeholder='First Name'/>
+                                                        </Form.Item>
+                                                    </div>
+
+                                                </Col>
+
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+
+                                                        <Form.Item label='Attendence'>
+                                                            <Select variant='filled'
+                                                                    defaultValue='Select Attendance'
+                                                                    onChange={desiSelector}
+                                                                    options={[
+                                                                        {
+                                                                            value: 'selectAttendance',
+                                                                            label: 'Select Attendance',
+                                                                            disabled: true
+                                                                        },
+                                                                        {
+                                                                            value: 'onTime',
+                                                                            label: 'On Time',
+                                                                        },
+                                                                        {
+                                                                            value: 'late',
+                                                                            label: 'Late',
+                                                                        },
+                                                                        {
+                                                                            value: 'absent',
+                                                                            label: 'Absent',
+                                                                        },
+
+                                                                    ]}/>
+                                                        </Form.Item>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Space direction='vertical'>
+                                                            <Form.Item label='Date'>
+                                                                <DatePicker variant='filled' onChange={dateChange}
+                                                                            placeholder='Select Date'/>
+                                                            </Form.Item>
+                                                        </Space>
+                                                    </div>
+
+                                                </Col>
+
+                                                <Col xs={{flex: "100%"}}
+                                                     sm={{flex: "100%"}}
+                                                     md={{flex: "50%"}}
+                                                     lg={{flex: "25%"}}>
+
+                                                    <div className="input-outer">
+                                                        <Form.Item label='Employee Reporting Time'>
+                                                            <TimePicker onChange={timeChange} changeOnScroll variant='filled'
+                                                                        needConfirm={false}/>
+                                                        </Form.Item>
+                                                    </div>
+                                                </Col>
+
+
+                                                <Col span={24}>
+
+                                                    <div className="btnNext">
+
+                                                        <Button type='dashed' htmlType='reset'>Reset</Button>
+                                                        <Button type='primary' htmlType='submit'>Update
+                                                            Attendance</Button>
+
+
+                                                    </div>
+                                                </Col>
+
+
+                                            </Row>
+                                        </Form>
+
+                                    </div>
+                                </Row>
                             </div>
-                        </div>
+                        </Modal>
 
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <TextField fullWidth type='Date' id='empAttDate'
-                                           helperText='Please choose Date' required/>
-                            </div>
-                        </div>
+                        <Row>
 
+                            <Col span={24}>
 
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-                            <div className="filed-margin">
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">Attendance</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        label="Designation">
-                                        <MenuItem defaultValue="">None</MenuItem>
-                                        <MenuItem value='1'>Present</MenuItem>
-                                        <MenuItem value='HF'>Late</MenuItem>
-                                        <MenuItem value='0'>Absent</MenuItem>
-                                    </Select>
-                                    <FormHelperText>Please select attendance</FormHelperText>
-                                </FormControl>
-                            </div>
-                        </div>
+                                <div className="button-group-outer">
 
-                    </div>
+                                    <Button type='primary' size='default' onClick={showModelReg}>Mark Attendance</Button>
+                                    <Button className='but-success' type='primary' onClick={showModelUpd}
+                                            size='default'>Update Attendance</Button>
 
-
-                    <div className="row">
-                        <div className="col-12 savEmpBtn">
-                            <Button className='col-12' variant="contained">Mark Attendance</Button>
-                        </div>
-                    </div>
-
-                    <hr/>
-                    <br/>
-
-                    <div className="allEmpHeader col-12 col-sm-6">
-                        <h5>All Attendance</h5>
-                    </div>
-                    <hr className='col-3'/>
-
-                    <div className="row">
-                        <div className="search-outer col-12">
-                            <div className="col-12 col-sm-6 col-md-4">
-                                <div className="filed-margin">
-                                    <TextField fullWidth type='search' id='serchEmp' label="Search Resercher's NIC"  variant="standard"
-                                               size='small'
-                                               placeholder='search here'/>
                                 </div>
+                            </Col>
+                        </Row>
+
+                        <Divider orientation="left">
+                            <div className="tblText">
+                                <h6>All Employees Attendance </h6>
                             </div>
+                        </Divider>
+                        <br/>
+
+                        <div className="tbl-inner">
+
+                            <Table dataSource={generateData} columns={[
+                                {
+                                    dataIndex: 'empid',
+                                    title: 'Employee ID',
+                                    key: 'empid'
+                                },
+                                {
+                                    dataIndex: 'empname',
+                                    title: 'Name',
+                                    key: 'empname'
+                                },
+                                {
+                                    dataIndex: 'atDate',
+                                    title: 'Date',
+                                    key: 'atDate'
+                                },
+                                {
+                                    dataIndex: 'atTime',
+                                    title: 'Time',
+                                    key: 'atTime'
+                                },
+                                {
+                                    dataIndex: 'atStatus',
+                                    title: 'Status',
+                                    render: (val) =>
+                                        val ? <Tag color="green">Active</Tag> : <Tag color="red">Not Active</Tag>
+                                },
+                                {
+                                    title: 'Remove Details',
+                                    render: ()=> (
+                                        <ButtonGroup>
+                                            <Button type='primary' danger size='small'> <AiTwotoneDelete className='btn-delete' /> Remove </Button>
+                                        </ButtonGroup>
+
+                                    )
+                                },
+
+                            ]}></Table>
                         </div>
 
-                    </div>
 
-                </form>
-
-                <div className=" table-outer col-12">
-                    <div className="table-wrapper">
-                        <table className='table table-hover col-12'>
-                            <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Nic</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Attendance</th>
-                                <th scope="col">Options</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td><Avatar>SA</Avatar></td>
-                                <td>2002651725971V</td>
-                                <td>Siyadoris Appuhami</td>
-                                <td>20/06/2024</td>
-                                <td>1</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><Avatar>NP</Avatar></td>
-                                <td>2002861725971V</td>
-                                <td>Notheris Appuhami</td>
-                                <td>07/01/2024</td>
-                                <td>0</td>
-                                <td>
-                                    <div className="optionBtn">
-                                        <Button variant="contained" color='success' size="small">Update</Button>
-                                        <Button variant="contained" color='error' size="small">Delete</Button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
+                    </Card>
 
 
-                        </table>
-                    </div>
-                </div>
+                </Col>
 
-            </div>
+
+            </Row>
         </>
-    );
+    )
+        ;
+
+
 }
+
 export default Attendance;

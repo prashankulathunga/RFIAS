@@ -1,137 +1,225 @@
-import DefaultCard from "./cards/defaultCard.jsx";
+import {Card, Col, Divider, Empty, Row, Space, Table, Tag, Typography} from "antd";
+import {HiUserGroup} from "react-icons/hi";
+import React, {useState} from "react";
+import {faker} from "@faker-js/faker";
+import {BsChatSquareQuoteFill, BsWalletFill} from "react-icons/bs";
 import DefaultChart from "./cards/defaultChart.jsx";
-import LeaveRequestCard from "./cards/leaveRequestCard.jsx";
-import {Avatar} from "@mui/material";
-
-const cardData = [
-    {
-        count: '34',
-        title: 'Total Employee'
-    },
-    {
-        count: '23',
-        title: 'On Time'
-    },
-    {
-        count: '06',
-        title: 'Late'
-    },
-    {
-        count: '05',
-        title: 'Absent'
-    }
-];
-
-const leaveReqData = [
-    {
-        username: 'Anuja Nimsara',
-        message: 'Ada mata niwaduwak denn hode'
-    },
-    {
-        username: 'Dulantha Ranaweera',
-        message: 'Mata ada enna wenne ne ane'
-    },
-    {
-        username: 'Charuka Dilshan',
-        message: 'Mata ada asaneepai give me leave please'
-    },
-    {
-        username: 'Prashan Kulathunga',
-        message: 'Mata niwadu oni ada'
-    },
-    {
-        username: 'Nisakanthi Uppala',
-        message: 'Mata enna wenne ne mata hodatama una halo'
-    },
-    {
-        username: 'Rasara Udagedara',
-        message: 'Mata enna wenne ne ada pees give me leave'
-    },
-];
 
 function Home() {
 
+    const data = () => {
+        const dat = [];
+
+        for (let i = 0; i < 34; i++) {
+            dat.push({
+                id: faker.datatype.number(1000),
+                name: faker.name.fullName(),
+                email: faker.internet.email(),
+                status: Math.random() > 0.5 ? true : false
+            })
+
+        }
+        return dat;
+    }
+    const generateData = data();
+
     return (
-        <>
-            <div className="container">
-                <br/>
-                <div className="row">
-                    {
-                        cardData.map((data, index) => {
-                            return (
-                                <DefaultCard count={data.count} title={data.title} key={index + 1}/>
-                            );
-                        })
-                    }
-                </div>
-                <div className="row">
-                    <div className="col-12 col-lg-7">
-                        <div className="chart-progess-text col-12">
-                            <h5>Monthly Attendance Progress</h5>
-                        </div>
-                        <div className="chart-outer">
-                            <DefaultChart/>
-                        </div>
-                    </div>
+        <div>
 
-                    <div className="col-12 col-lg-5">
-                        <div className="chart-text">
-                            <h5><span style={{color:"#f39c12", fontWeight:"660"}}>Leave </span> Requests</h5>
-                        </div>
-                        <div className="leaveRq-outer">
+            <div>
 
-                            {
-                                leaveReqData.map((data, index) => {
-                                    return (
-                                        <LeaveRequestCard userName={data.username} message={data.message}
-                                                          key={index + 1}/>
-                                    );
-                                })
-                            }
-                        </div>
+                {/*welcome text*/}
 
-                    </div>
-                </div>
-                <br/>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="chart-text">
-                            <h5><span style={{color:"#e74c3c", fontWeight:"660"}}>Low </span>Attendance</h5>
-                        </div>
+                <Row gutter={16}>
 
-                        <div className="low-att-table-outer">
-                            <div className="table-wrapper">
-                                <table className='table table-hover'>
-                                    <thead>
-                                    <tr>
-                                        <th scope='col'></th>
-                                        <th scope='col'>Nic</th>
-                                        <th scope='col'>Name</th>
-                                        <th className='table-danger' scope='col'>Month Attendance Count</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><Avatar>DR</Avatar></td>
-                                        <td>200212639871V</td>
-                                        <td>Dulantha Ranaweera</td>
-                                        <td>71</td>
-                                    </tr>
-                                    <tr>
-                                        <td><Avatar>AN</Avatar></td>
-                                        <td>100216026952V</td>
-                                        <td>Anuja Nimsara</td>
-                                        <td>76</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <Col span={24}>
+                        <Card className='cht-outer'>
+                            <Empty></Empty>
+                        </Card>
+                    </Col>
+
+                </Row>
+
+
+                <Row gutter={16}>
+
+                    <Col xs={{flex: '100%'}}
+                         sm={{flex: '100%'}}
+                         md={{flex: '50%'}}
+                         lg={{flex: '20%'}}>
+                        <Card className='card-outer shadow-outer'>
+                            <Space direction='vertical'>
+                                <Typography.Text className='card-inner'>27</Typography.Text>
+                                <Typography.Text className='cardText-item'>
+                                    <Space direction='horizontal'> <HiUserGroup style={{fontSize: "18px"}}/> Total
+                                         </Space>
+                                </Typography.Text>
+                            </Space>
+                        </Card>
+                    </Col>
+
+                    <Col xs={{flex: '100%'}}
+                         sm={{flex: '100%'}}
+                         md={{flex: '50%'}}
+                         lg={{flex: '20%'}}>
+                        <Card className='card-outer shadow-outer'>
+                            <Space direction='vertical'>
+                                <Typography.Text className='card-inner'>17</Typography.Text>
+                                <Typography.Text className='cardText-item'>
+                                    <Space direction='horizontal'> <BsWalletFill  style={{fontSize: "18px"}}/> On Time
+                                         </Space>
+                                </Typography.Text>
+                            </Space>
+                        </Card>
+                    </Col>
+
+                    <Col xs={{flex: '100%'}}
+                         sm={{flex: '100%'}}
+                         md={{flex: '50%'}}
+                         lg={{flex: '20%'}}>
+                        <Card className='card-outer shadow-outer'>
+                            <Space direction='vertical'>
+                                <Typography.Text className='card-inner'>02</Typography.Text>
+                                <Typography.Text className='cardText-item'>
+                                    <Space direction='horizontal'> <BsWalletFill  style={{fontSize: "18px"}}/> Late
+                                         </Space>
+                                </Typography.Text>
+                            </Space>
+                        </Card>
+                    </Col>
+
+                    <Col xs={{flex: '100%'}}
+                         sm={{flex: '100%'}}
+                         md={{flex: '50%'}}
+                         lg={{flex: '20%'}}>
+                        <Card className='card-outer shadow-outer'>
+                            <Space direction='vertical'>
+                                <Typography.Text className='card-inner' style={{color:'red'}}>03</Typography.Text>
+                                <Typography.Text className='cardText-item'>
+                                    <Space direction='horizontal'> <BsWalletFill style={{fontSize: "18px"}}/> Absent
+                                         </Space>
+                                </Typography.Text>
+                            </Space>
+                        </Card>
+                    </Col>
+
+                    <Col xs={{flex: '100%'}}
+                         sm={{flex: '100%'}}
+                         md={{flex: '50%'}}
+                         lg={{flex: '20%'}}>
+                        <Card className='card-outer shadow-outer'>
+                            <Space direction='vertical'>
+                                <Typography.Text className='card-inner'>09</Typography.Text>
+                                <Typography.Text className='cardText-item'>
+                                    <Space direction='horizontal'> <BsChatSquareQuoteFill  style={{fontSize: "18px"}}/> Leave Requests
+                                         </Space>
+                                </Typography.Text>
+                            </Space>
+                        </Card>
+                    </Col>
+
+
+                </Row>
             </div>
 
-        </>
+
+            <Row gutter={16}>
+
+                <Col xs={{flex: '100%'}}
+                     sm={{flex: '100%'}}
+                     md={{flex: '100%'}}
+                     lg={{flex: '40%'}}>
+
+                    <div className="tbl-outer">
+                        <Card className='shadow-outer'>
+
+
+                            <Divider orientation="left">
+                                <div className="tblText">
+                                    <h6>Daily Attendance View </h6>
+                                </div>
+                            </Divider>
+                            <br/>
+
+                            <div className="tbl-inner">
+                                <Table dataSource={generateData} columns={[
+                                    {
+                                        dataIndex: "id",
+                                        title: "ID",
+                                        key: "id"
+                                    },
+                                    {
+                                        dataIndex: "name",
+                                        title: "Name",
+                                        key: "name"
+                                    },
+                                    {
+                                        dataIndex: "email",
+                                        title: "Email",
+                                        key: "email"
+                                    },
+                                    {
+                                        dataIndex: "status",
+                                        title: "Status",
+                                        render: (val) =>
+                                            val ? <Tag color="green">Active</Tag> : <Tag color="red">Not Active</Tag>
+
+                                    },
+
+
+                                ]}></Table>
+                            </div>
+
+
+                        </Card>
+                    </div>
+                </Col>
+
+
+
+
+                <Col xs={{flex: '100%'}}
+                     sm={{flex: '100%'}}
+                     md={{flex: '100%'}}
+                     lg={{flex: '40%'}}>
+
+                    <div className="cht-outer">
+                        <Card className='shadow-outer'>
+
+                            <DefaultChart />
+
+                        </Card>
+                    </div>
+
+                    <Card className='shadow-outer empty-margin'>
+                        <Empty />
+                    </Card>
+
+                    <Card className='shadow-outer empty-margin'>
+                        <Empty />
+                    </Card>
+
+
+                </Col>
+
+                <Col lg={{flex:"19.9%"}}>
+                <Card className='shadow-outer empty-margin'>
+                    <Empty />
+                </Card>
+
+                    <Card className='shadow-outer empty-margin'>
+                        <Empty />
+                    </Card>
+
+
+
+                </Col>
+
+            </Row>
+
+
+
+        </div>
     );
 }
 
