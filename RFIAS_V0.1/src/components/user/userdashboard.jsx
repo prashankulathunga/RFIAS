@@ -1,4 +1,4 @@
-import { Table } from "react-bootstrap";
+import { Form, FormLabel, Table } from "react-bootstrap";
 import "./allcss.css";
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
@@ -19,31 +19,55 @@ function Udashboard() {
   return (
     <Container>
       <Row>
-        <Col>
-          <div className="accountdetail">
-            <div className="row1">
-              <label>Mobile Number</label>
-              <input type="text" />
+        <Col className="col1">
+          <Form>
+            <div className="accountdetail">
+              <div className="row1">
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel id="profilename">Allen Perkins </FormLabel> <br/>
+                  <FormLabel id="profileposition">Researcher </FormLabel>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel>Mobile Number </FormLabel>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </div>
+              <div className="row2">
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel>Birth of Date </FormLabel>
+                  <Form.Control type="date" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel>Email </FormLabel>
+                  <Form.Control type="Email" />
+                </Form.Group>
+              </div>
+              <div className="row3">
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel>Position </FormLabel>
+                  <Form.Control type="text" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <FormLabel>location </FormLabel>
+                  <Form.Control type="loaction" />
+                </Form.Group>
+              </div>
             </div>
-            <div className="row2">
-              <label>Position</label>
-              <input type="text" /> <br />
-              <label>Birth of Date</label>
-              <input type="text" />
-            </div>
-            <div className="row3">
-              <label>location</label>
-              <input type="location" />
-              <br />
-              <label>Email</label>
-              <input type="email" />
-            </div>
-          </div>
+          </Form>
         </Col>
-        <Col> 2 of 2 </Col>
+        
+        <Col className="col2">
+  <div className="time">
+    <h3>Today:</h3>
+    <h2>{dateTime.toLocaleDateString()}</h2>
+    <h2 id="time">{dateTime.toLocaleTimeString()}</h2>
+  </div>
+</Col>
+        
       </Row>
       <Row>
-        <Col>CHART</Col>
+        <Col></Col>
       </Row>
       <Row>
         <Col>

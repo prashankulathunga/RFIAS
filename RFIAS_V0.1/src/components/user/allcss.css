@@ -19,9 +19,6 @@ body{
 
 }
 
-.leaveformdetail{
-
-}
 .Leaveoverview{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #fff;
@@ -124,3 +121,77 @@ margin-left: 60%;
     margin-top: 50px;
 }
 
+/* user dashboard account style input bar  */
+.row1
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+    width: 100%;
+ }
+.row2
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+    width: 100%;
+    
+    
+}
+.row3
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+   
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+}
+.row1{
+    float: left;
+}
+.row2{
+    clear: left;
+    float: right;
+}
+
+.row3{
+    float :left;
+}
+
+.container{
+    background-color: #fff;
+}
+#profilename{
+    margin-top: 30px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+#profileposition{
+    color: black;
+    font-size: 20px;
+}
+.time{
+    text-align: right;
+    margin: 20%;
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+}
+#time{
+    color: rgb(137, 134, 134);
+}
