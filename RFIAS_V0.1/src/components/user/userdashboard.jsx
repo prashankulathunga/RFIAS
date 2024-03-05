@@ -17,9 +17,9 @@ function Udashboard() {
   }, []);
 
   return (
-    <Container>
+    <Container fluid className="pg" style={{ marginTop: '132px', marginBottom: '0', paddingTop: '0', paddingBottom: '0', marginLeft: '0', marginRight: '0', paddingLeft: '0', paddingRight: '0'}}>
       <Row>
-        <Col className="col1">
+      <Col className="col1" style={{ paddingLeft: '100px' }}>
           <Form>
             <div className="accountdetail">
               <div className="row1">
@@ -61,7 +61,7 @@ function Udashboard() {
   <div className="time">
     <h3>Today:</h3>
     <h2>{dateTime.toLocaleDateString()}</h2>
-    <h2 id="time">{dateTime.toLocaleTimeString()}</h2>
+    
   </div>
 </Col>
         

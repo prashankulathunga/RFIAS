@@ -1,6 +1,9 @@
+
 body{
     background-color: #fff;
+    
 }
+
 .layout1{
     height: auto;
     width: 100%;
@@ -97,6 +100,7 @@ margin-left: 60%;
 
 .page{
     background-color: #f3f3f3;
+    margin-top: 137px;
 }
 
 /* leave page boxes */
@@ -194,4 +198,8 @@ margin-left: 60%;
 }
 #time{
     color: rgb(137, 134, 134);
+}
+
+.col1{
+    padding-left: 20px;
 }

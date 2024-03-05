@@ -17,6 +17,7 @@ function Research() {
   const handleUpload = () => {};
 
   return (
+    
     <div className="page">
       <div className="stas">
         <div className="box">
