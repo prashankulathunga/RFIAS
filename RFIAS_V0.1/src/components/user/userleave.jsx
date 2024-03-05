@@ -37,7 +37,7 @@ function Leave() {
       
 
       <div className="leaveformdetail">
-        <h1>Request Leave </h1>
+        <h1 style={{paddingLeft:'15px'}}>Request Leave </h1>
         <div className="leaveinput">
         <div className="firstrow">
         <input type="text" id="leaveinput" placeholder="Request Date MM/DD/YYYY" onFocus={"(this.type=''date')"} onBlur={"(this.type='text')"}/>
