@@ -2,8 +2,12 @@ import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import "./allcss.css"
 import Form from 'react-bootstrap/Form';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 function Leave() {
   return (
+    <Container fluid className="pg" style={{ marginTop: '120px', marginBottom: '0', paddingTop: '0', paddingBottom: '0', marginLeft: '0', marginRight: '0', paddingLeft: '0', paddingRight: '0'}}>
     <div className="page">
       <div className="leavepg boxes">
         <div className="leave-box">
@@ -29,6 +33,7 @@ function Leave() {
           </i>
         </div>
       </div>
+      <Col style={{float: "left", width: '50%'}}>
       
 
       <div className="leaveformdetail">
@@ -64,7 +69,8 @@ function Leave() {
 
        
       </div>
-      <br />
+      </Col>
+      <Col style={{float: "right", width:'50%'}}>
 
       <div className="Leaveoverview">
         <h2>Leave Request Overveiw</h2>
@@ -82,7 +88,10 @@ function Leave() {
           <tbody></tbody>
         </Table>
       </div>
+      </Col>
     </div>
+    
+    </Container>
   );
 }
 
