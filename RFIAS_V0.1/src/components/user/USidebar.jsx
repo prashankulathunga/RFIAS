@@ -1,78 +1,69 @@
+import React, { useState } from "react";
+import { Layout, Menu, Button } from "antd";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
+import { IoIosLogOut } from "react-icons/io";
+import { FcLeave } from "react-icons/fc";
+import { IoDocumentsOutline } from "react-icons/io5";
 import Udashboard from "./userdashboard.jsx";
 import Research from "./research.jsx";
 import Leave from "./userleave.jsx";
 import Login from "../login/LoginForm.jsx";
-import Clock from "../cards/clock.jsx";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+const { Header, Sider, Content } = Layout;
 
 function Structure() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <>
-      <Router>
-        <div className="nav-outer">
-          <nav className="navbar navbar-expand-lg fixed-top bg-body-tertiary navbar-light">
-            <div className="container-fluid">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav ms-auto">
-                  <li className="nav-item">
-                    <Link to="/" className="navbar-text nav-link active" aria-current="page">
-                      Profile
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/research" className="nav-link">
-                      Research
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/leave" className="nav-link">
-                      Leave Request
-                    </Link>
-                  </li>
-                  
-                  <li className="nav-item">
-                    <Link to="/logout" className="nav-link">
-                      Log-Out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
+    <Layout className="grid">
+      <Header className="headbar" >
+        <div className="logo" />
+      </Header>
+      <Layout style={{ marginTop: "64px" }}>
+        <Sider
+          theme="light"
+          width={200}
+          style={{ position: "fixed", left: 0, height: "100vh", top: "64px", transition: '0.3s', overflow: 'auto' }}
+          collapsible
+          collapsed={collapsed}
+          onCollapse={toggleSidebar}
+          className="sidebar"
+        >
+          <Menu mode="inline" theme="light" style={{ height: "100%", borderRight: 0 }}>
+            <Menu.Item key="/" icon={<IoHome />}>
+              <Link to="/" style={{ textDecoration: "none" }}>Profile</Link>
+            </Menu.Item>
+            <Menu.Item key="/research" icon={<IoDocumentsOutline />}>
+              <Link to="/research" style={{ textDecoration: "none" }}>Research</Link>
+            </Menu.Item>
+            <Menu.Item key="/leave" icon={<FcLeave />}>
+              <Link to="/leave" style={{ textDecoration: "none" }}>Leave</Link>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout style={{ marginLeft: collapsed ? 80 : 200, transition: '0.3s' }}>
+          <Content style={{ margin: "24px 16px", padding: 24, background: '#fff', minHeight: 280 }}>
+            <RouterPath />
+          </Content>
+        </Layout>
+      </Layout>
+    </Layout>
+  );
+}
 
-        <div className="row">
-          <div className="col-12">
-            <div className="clock-outer">
-              <div className="container">
-                <Clock />
-                <hr />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <Routes>
-          <Route path="/" element={<Udashboard />} />
-          <Route path="/research" element={<Research  />} />
-          <Route path="/leave" element={<Leave />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Router>
-    </>
+function RouterPath() {
+  return (
+    <Routes>
+      <Route path="/" element={<Udashboard />} />
+      <Route path="/research" element={<Research />} />
+      <Route path="/leave" element={<Leave />} />
+    </Routes>
   );
 }
 

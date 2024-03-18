@@ -17,7 +17,7 @@ function Udashboard() {
   }, []);
 
   return (
-    <Container fluid className="pg" style={{ marginTop: '132px', marginBottom: '0', paddingTop: '0', paddingBottom: '0', marginLeft: '0', marginRight: '0', paddingLeft: '0', paddingRight: '0'}}>
+    <Container fluid className="pg" >
       <Row>
       <Col className="col1" style={{ paddingLeft: '100px' }}>
           <Form>

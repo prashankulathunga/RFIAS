@@ -28,21 +28,8 @@ body{
 }
 
 
-#statmaintext{
-    padding: 0%;
-    margin: 0%;
-    text-align: left;
-    color: rgb(86, 86, 200);
-    font-size: 20px;
-}
-
-#statbottomtext{
-    font-weight: bold;
-    text-align: right;
-}
-
 .filesubmit h3{
-    margin-top: 150px;
+    
     clear: left;
     padding: 0%;
     color: rgb(86, 86, 200);

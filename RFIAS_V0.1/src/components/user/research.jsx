@@ -19,7 +19,7 @@ function Research() {
   return (
     
     <div className="page">
-      <div className="stas">
+      <div className="leavepgboxes">
         <div className="box">
           <i className="uli-file">
             <h3 id="statmaintext"> Complete</h3>

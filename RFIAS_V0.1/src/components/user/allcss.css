@@ -1,6 +1,6 @@
 
 body{
-    background-color: #fff;
+    background-color: rgb(221, 221, 221);
     
 }
 
@@ -35,8 +35,12 @@ body{
     padding: 20px;
 }
 
-.leaveinput{
-    margin: 30px;
+#leaveinput{
+    margin: 10px;
+    
+}
+#leaveinput::placeholder{
+    color: #7e7e7e;
 }
 
 .firstrow input{
@@ -100,7 +104,10 @@ margin-left: 60%;
 
 .page{
     background-color: #f3f3f3;
-    margin-top: 137px;
+
+}
+.pg{
+    height: 80vh;
 }
 
 /* leave page boxes */
@@ -204,3 +211,41 @@ margin-left: 60%;
     padding-left: 20px;
 }
 
+/*  uside bar styles*/
+
+.grid{
+    
+    min-height: 100vh;
+}
+.headbar{
+    background-Color: white; 
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.leavepgboxes{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+
+#statmaintext{
+    padding: 0%;
+    margin: 0%;
+    text-align: left;
+    color: rgb(86, 86, 200);
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+#statbottomtext{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    padding: 0%;
+    margin: 0%;
+    padding-bottom: 0%;
+
+}

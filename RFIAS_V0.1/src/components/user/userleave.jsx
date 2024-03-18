@@ -7,28 +7,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 function Leave() {
   return (
-    <Container fluid className="pg" style={{ marginTop: '120px', marginBottom: '0', paddingTop: '0', paddingBottom: '0', marginLeft: '0', marginRight: '0', paddingLeft: '0', paddingRight: '0'}}>
+    <Container fluid className="pg" >
+ 
     <div className="page">
-      <div className="leavepg boxes">
+      <div className="leavepgboxes">
         <div className="leave-box">
           <i className="uli-file">
             <h3 id="statmaintext"> Casual Leave</h3>
-            <br/>
             <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
-            
           </i>
         </div>
         <div className="leave-box">
           <i className="uli-file">
             <h3 id="statmaintext"> Sick Leave</h3>
-            <br/>
             <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
           </i>
         </div>
         <div className="leave-box">
           <i className="uli-file">
             <h3 id="statmaintext"> All Leave </h3>
-            <br/>
             <p id="statbottomtext">Available - 05 <br/> Used - 02</p>
           </i>
         </div>
@@ -38,6 +35,7 @@ function Leave() {
 
       <div className="leaveformdetail">
         <h1 style={{paddingLeft:'15px'}}>Request Leave </h1>
+        <br></br>
         <div className="leaveinput">
         <div className="firstrow">
         <input type="text" id="leaveinput" placeholder="Request Date MM/DD/YYYY" onFocus={"(this.type=''date')"} onBlur={"(this.type='text')"}/>

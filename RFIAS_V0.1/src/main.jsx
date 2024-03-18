@@ -9,10 +9,16 @@ import Research from "./components/user/research.jsx";
 import Udashboard from "./components/user/userdashboard.jsx";
 import Structure from "./components/user/USidebar.jsx";
 import LoginForm from "./components/login/LoginForm.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Structure />
+
+<BrowserRouter>
+<Structure />
+</BrowserRouter>
+
+    
   </React.StrictMode>
 );
