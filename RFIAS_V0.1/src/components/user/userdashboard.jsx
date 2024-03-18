@@ -61,6 +61,7 @@ function Udashboard() {
   <div className="time">
     <h3>Today:</h3>
     <h2>{dateTime.toLocaleDateString()}</h2>
+    <h2 style={{ color: "gray"}}>{dateTime.toLocaleTimeString()}</h2>
     
   </div>
 </Col>
