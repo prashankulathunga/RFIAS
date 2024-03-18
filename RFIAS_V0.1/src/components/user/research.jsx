@@ -2,6 +2,10 @@ import { Button, FormLabel, Table } from "react-bootstrap";
 import { useRef, useState } from "react";
 import "./research.css";
 
+import { MdIncompleteCircle } from "react-icons/md";
+import { MdOutlineHourglassTop } from "react-icons/md";
+import { RiStopCircleLine } from "react-icons/ri";
+import { CiViewList } from "react-icons/ci";
 function Research() {
   const [files, setFiles] = useState(null);
   const inputRef = useRef();
@@ -17,30 +21,40 @@ function Research() {
   const handleUpload = () => {};
 
   return (
-    
     <div className="page">
       <div className="leavepgboxes">
         <div className="box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Complete</h3>
+            <h3 id="statmaintext">
+              {" "}
+              <MdIncompleteCircle />
+              Complete{" "}
+            </h3>
             <p id="statbottomtext">05</p>
           </i>
         </div>
         <div className="box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Running</h3>
+            <h3 id="statmaintext">
+              {" "}
+              <MdOutlineHourglassTop /> Running{" "}
+            </h3>
             <p id="statbottomtext">02</p>
           </i>
         </div>
         <div className="box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Total Research </h3>
+            <h3 id="statmaintext"><CiViewList /> Total Research </h3>
             <p id="statbottomtext">05</p>
           </i>
         </div>
         <div className="box">
           <i className="uli-file">
-            <h3 id="statmaintext"> Hold</h3>
+            <h3 id="statmaintext">
+              {" "}
+              <RiStopCircleLine />
+              Hold
+            </h3>
             <p id="statbottomtext">05</p>
           </i>
         </div>
@@ -51,7 +65,6 @@ function Research() {
         <br />
         <h3>Research submit report</h3>
         <br />
-        
 
         {files ? (
           <div className="uploads">
@@ -91,9 +104,9 @@ function Research() {
           </div>
         )}
       </div>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
       <div className="researchoverview">
         <h1>Research overview</h1>
 

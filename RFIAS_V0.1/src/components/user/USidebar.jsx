@@ -5,11 +5,13 @@ import { IoHome } from "react-icons/io5";
 import { IoIosLogOut } from "react-icons/io";
 import { FcLeave } from "react-icons/fc";
 import { IoDocumentsOutline } from "react-icons/io5";
+import { BsBriefcase } from "react-icons/bs";
 import Udashboard from "./userdashboard.jsx";
 import Research from "./research.jsx";
 import Leave from "./userleave.jsx";
 import Login from "../login/LoginForm.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -42,7 +44,7 @@ function Structure() {
             <Menu.Item key="/research" icon={<IoDocumentsOutline />}>
               <Link to="/research" style={{ textDecoration: "none" }}>Research</Link>
             </Menu.Item>
-            <Menu.Item key="/leave" icon={<FcLeave />}>
+            <Menu.Item key="/leave" icon={<BsBriefcase />}>
               <Link to="/leave" style={{ textDecoration: "none" }}>Leave</Link>
             </Menu.Item>
           </Menu>
