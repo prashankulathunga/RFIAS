@@ -1,0 +1,23 @@
+body{
+    padding: 0%;
+
+}
+.accountdetails{
+    width: 50%;
+    height: fit-content;
+}
+
+.accountdetails input{
+border: 1px solid #555;
+border-radius: 8px;
+
+
+}
+.r{
+    float: left;
+}
+
+.datetime{
+    clear: left;
+}
+
