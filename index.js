@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require("cors");
+const connection = require('./model/databaseConnection');
 require('dotenv').config();
 const app = express();
 
@@ -22,7 +23,15 @@ try {
 }
 
 app.get('/test-api', async (req, resp) => {
-    return resp.json({message: 'server is running perfectly!'});
+    // return resp.json({message: 'server is running perfectly!'});
+
+    connection.query('SELECT * FROM attendance', (err, result, fields)=>{
+        console.log(result);
+        console.log(fields);
+
+        return resp.status(200).json(result);
+    });
+
 
 });
 
