@@ -4,6 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import {ConfigProvider} from "antd";
 import {BrowserRouter} from "react-router-dom";
+import LoginForm from "./components/login/LoginForm.jsx";
+import Signup from "./components/login/signup.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
