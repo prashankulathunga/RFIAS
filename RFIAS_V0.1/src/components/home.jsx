@@ -76,6 +76,16 @@ function Home() {
                     {/*</Col>*/}
 
 
+
+                    {/*<Col span={8}>*/}
+                    {/*    <Card className='cht-outer shadow-outer time-card-outer'>*/}
+                    {/*    <div className="time-outer">*/}
+                    {/*        <Clock />*/}
+                    {/*    </div>*/}
+                    {/*    </Card>*/}
+                    {/*</Col>*/}
+
+
                 </Row>
 
 

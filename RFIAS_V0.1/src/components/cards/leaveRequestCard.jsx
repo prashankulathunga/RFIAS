@@ -12,7 +12,7 @@ function LeaveRequestCard(props) {
                         <div className="card-body">
                             <h5 className="card-text">{userName}</h5>
                             <p className="card-text"><small className="text-body-secondary">{message}</small></p>
-                            <Button className='exploreBtn' variant="contained" size="small">Explore >></Button>
+                            <Button className='exploreBtn' variant="contained" size="small">Explore </Button>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import {Radio} from 'antd';
 import {Select, Space} from 'antd';
 import {ButtonGroup} from "react-bootstrap";
 import {AiTwotoneDelete} from "react-icons/ai";
+import {FaSearch} from "react-icons/fa";
 
 function Employee() {
 
