@@ -68,7 +68,7 @@ function LeavRequest(){
 
                                     <Divider orientation="left">
                                         <div className="tblText">
-                                            <h6>Fully Employees Salary Details </h6>
+                                            <h6>Employees Leave Requests </h6>
                                         </div>
                                     </Divider>
 
@@ -120,8 +120,8 @@ function LeavRequest(){
                                     title: 'Actions',
                                     render: ()=> (
                                         <ButtonGroup className='btn-group-outer'>
-                                            <Button type='primary' className='but-success' size='small'> <PiPaperPlaneRightFill     className='btn-delete' /> Accept </Button>
-                                            <Button type='primary' danger size='small'> <MdPlaylistRemove   className='btn-delete' /> Decline </Button>
+                                            <Button type='primary' className='but-success' size='middle'> <PiPaperPlaneRightFill     className='btn-delete' /> Accept </Button>
+                                            <Button type='primary' danger size='middle'> <MdPlaylistRemove   className='btn-delete' /> Decline </Button>
                                         </ButtonGroup>
 
                                     )
