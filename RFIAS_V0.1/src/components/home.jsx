@@ -5,6 +5,7 @@ import {faker} from "@faker-js/faker";
 import {BsChatSquareQuoteFill, BsWalletFill} from "react-icons/bs";
 import DefaultChart from "./cards/defaultChart.jsx";
 import welcomeText from '../assets/images/pngwing.com (10).png'
+import Clock from "./cards/clock.jsx";
 
 function Home() {
 
@@ -37,10 +38,10 @@ function Home() {
                         <Card className='cht-outer shadow-outer welcome-bgColor'>
                             <Row gutter={12}>
 
-                                <Col xs={{flex: '100%'}}
-                                     sm={{flex: '100%'}}
-                                     md={{flex: '100%'}}
-                                     lg={{flex: '50%'}}>
+                                <Col xs={{span: '24'}}
+                                     sm={{span: '24'}}
+                                     md={{span: '24'}}
+                                     lg={{span: '15'}}>
                                     <div className="welcome-outer">
                                         <img src={welcomeText} alt="welcomeText"/>
                                         <div className="welcome-text">
@@ -48,12 +49,12 @@ function Home() {
                                             <p>
                                                 "Streamline your attendance tracking with cutting-edge face recognition
                                                 technology. RFIAS revolutionizes the
-                                                way you manage attendance, ensuring accuracy, security, and efficiency in one
+                                                way you manage attendance, ensuring accuracy, security, and efficiency
+                                                in one
                                                 seamless solution."</p>
 
                                             <h5>Hello Admin,</h5>
                                         </div>
-
 
 
                                     </div>
@@ -161,12 +162,13 @@ function Home() {
             </div>
 
 
-            <Row gutter={16}>
+            <Row gutter={12}>
 
-                <Col xs={{flex: '100%'}}
-                     sm={{flex: '100%'}}
-                     md={{flex: '100%'}}
-                     lg={{flex: '40%'}}>
+                <Col xs={{span: '24'}}
+                     sm={{span: '24'}}
+                     md={{span: '24'}}
+                     lg={{span: '13'}}>
+
 
                     <div className="tbl-outer">
                         <Card className='shadow-outer'>
@@ -208,47 +210,53 @@ function Home() {
                                 ]}></Table>
                             </div>
 
-
                         </Card>
                     </div>
                 </Col>
 
 
-                <Col xs={{flex: '100%'}}
-                     sm={{flex: '100%'}}
-                     md={{flex: '100%'}}
-                     lg={{flex: '40%'}}>
+                <Col xs={{span: '24'}}
+                     sm={{span: '24'}}
+                     md={{span: '24'}}
+                     lg={{span: '11'}}>
 
-                    <div className="cht-outer">
-                        <Card className='shadow-outer'>
+                    <Row gutter={12}>
 
-                            <DefaultChart/>
+                        <Col span={13}>
 
+                            <Card className='shadow-outer empty-margin'>
+                                <Empty/>
+                            </Card>
+                        </Col>
+
+                        <Col span={11}>
+                            <Card className=' empty-margin time-outer '>
+                                <Clock />
+                            </Card>
+                        </Col>
+                    </Row>
+
+
+                    <Col span={24}>
+                        <div className="cht-outer">
+                            <Card className='shadow-outer'>
+
+                                <DefaultChart/>
+
+                            </Card>
+                        </div>
+                    </Col>
+
+                    <Col span={24}>
+
+                        <Card className='shadow-outer empty-margin'>
+                            <Empty/>
                         </Card>
-                    </div>
-
-                    <Card className='shadow-outer empty-margin'>
-                        <Empty/>
-                    </Card>
-
-                    <Card className='shadow-outer empty-margin'>
-                        <Empty/>
-                    </Card>
+                    </Col>
 
 
                 </Col>
 
-                <Col lg={{flex: "19.9%"}}>
-                    <Card className='shadow-outer empty-margin'>
-                        <Empty/>
-                    </Card>
-
-                    <Card className='shadow-outer empty-margin'>
-                        <Empty/>
-                    </Card>
-
-
-                </Col>
 
             </Row>
 
