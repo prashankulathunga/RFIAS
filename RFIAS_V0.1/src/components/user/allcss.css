@@ -1,4 +1,9 @@
 
+body{
+    background-color: rgb(221, 221, 221);
+    
+}
+
 .layout1{
     height: auto;
     width: 100%;
@@ -14,5 +19,233 @@
     
     border-radius: 8px;
     border-style: ridge;
+
+}
+
+.Leaveoverview{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.Leaveoverview h2{
+    clear: left;
+    color: rgb(86, 86, 200);
+    font-size: 24px;
+    padding: 20px;
+}
+
+#leaveinput{
+    margin: 10px;
+    
+}
+#leaveinput::placeholder{
+    color: #7e7e7e;
+}
+
+.firstrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.leaveformdetail h1{
+    clear: left;
+    color: rgb(86, 86, 200);
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.firstrow{
+    float: left;
+}
+
+.secondrow{
+   float: left;
+}
+.secondrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    
+}
+
+.thirdrow input{
+    border-style: solid 1px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 65%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.fourthrow{
+margin-left: 60%;
+}
+::placeholder{
+    color: black;
+}
+
+.page{
+    background-color: #f3f3f3;
+
+}
+.pg{
+    height: 80vh;
+}
+
+/* leave page boxes */
+.leave-box{
+    position: relative;
+    flex: 1;
+    background-color:rgb(255, 255, 255);
+    border-radius: 8px;
+    border-color: black;
+    border-style: ridge;
+    padding: 1%;
+    margin: 20px;
+    width: 20%;
+    height: 150px;
+    float: left;
+    border-width: 0px;
+    margin-left: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+/* user dashboard account style input bar  */
+.row1
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+    width: 100%;
+ }
+.row2
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+    width: 100%;
+    
+    
+}
+.row3
+ input{
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 12px;
+   
+    background-color: #fff;
+    font-size: 14px;
+    color: rgb(156, 158, 160);
+}
+.row1{
+    float: left;
+}
+.row2{
+    clear: left;
+    float: right;
+}
+
+.row3{
+    float :left;
+}
+
+.container{
+    background-color: #fff;
+}
+#profilename{
+    margin-top: 30px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+#profileposition{
+    color: black;
+    font-size: 20px;
+}
+.time{
+    text-align: right;
+    margin: 20%;
+    border-style: solid 3px;
+    border-color: rgb(156, 158, 160);
+    border-radius: 8px;
+}
+#time{
+    color: rgb(137, 134, 134);
+}
+
+.col1{
+    padding-left: 20px;
+}
+
+/*  uside bar styles*/
+
+.grid{
+    
+    min-height: 100vh;
+}
+.headbar{
+    background-Color: white; 
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.leavepgboxes{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+
+#statmaintext{
+    padding: 0%;
+    margin: 0%;
+    text-align: left;
+    color: rgb(86, 86, 200);
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+#statbottomtext{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    padding: 0%;
+    margin: 0%;
+    padding-bottom: 0%;
 
 }
