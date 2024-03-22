@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import {faker} from "@faker-js/faker";
 import {BsChatSquareQuoteFill, BsWalletFill} from "react-icons/bs";
 import DefaultChart from "./cards/defaultChart.jsx";
+import welcomeText from '../assets/images/pngwing.com (10).png'
 
 function Home() {
 
@@ -33,10 +34,46 @@ function Home() {
                 <Row gutter={16}>
 
                     <Col span={24}>
-                        <Card className='cht-outer'>
-                            <Empty></Empty>
+                        <Card className='cht-outer shadow-outer welcome-bgColor'>
+                            <Row gutter={12}>
+
+                                <Col xs={{flex: '100%'}}
+                                     sm={{flex: '100%'}}
+                                     md={{flex: '100%'}}
+                                     lg={{flex: '50%'}}>
+                                    <div className="welcome-outer">
+                                        <img src={welcomeText} alt="welcomeText"/>
+                                        <div className="welcome-text">
+                                            <h1>Welcome Back to RFIAS!</h1>
+                                            <p>
+                                                "Streamline your attendance tracking with cutting-edge face recognition
+                                                technology. RFIAS revolutionizes the
+                                                way you manage attendance, ensuring accuracy, security, and efficiency in one
+                                                seamless solution."</p>
+
+                                            <h5>Hello Admin,</h5>
+                                        </div>
+
+
+
+                                    </div>
+                                </Col>
+
+                            </Row>
+
                         </Card>
+
                     </Col>
+
+
+                    {/*<Col span={8}>*/}
+                    {/*    <Card className='cht-outer shadow-outer time-card-outer'>*/}
+                    {/*    <div className="time-outer">*/}
+                    {/*        <Clock />*/}
+                    {/*    </div>*/}
+                    {/*    </Card>*/}
+                    {/*</Col>*/}
+
 
                 </Row>
 
@@ -52,7 +89,7 @@ function Home() {
                                 <Typography.Text className='card-inner'>27</Typography.Text>
                                 <Typography.Text className='cardText-item'>
                                     <Space direction='horizontal'> <HiUserGroup style={{fontSize: "18px"}}/> Total
-                                         </Space>
+                                    </Space>
                                 </Typography.Text>
                             </Space>
                         </Card>
@@ -66,8 +103,8 @@ function Home() {
                             <Space direction='vertical'>
                                 <Typography.Text className='card-inner'>17</Typography.Text>
                                 <Typography.Text className='cardText-item'>
-                                    <Space direction='horizontal'> <BsWalletFill  style={{fontSize: "18px"}}/> On Time
-                                         </Space>
+                                    <Space direction='horizontal'> <BsWalletFill style={{fontSize: "18px"}}/> On Time
+                                    </Space>
                                 </Typography.Text>
                             </Space>
                         </Card>
@@ -81,8 +118,8 @@ function Home() {
                             <Space direction='vertical'>
                                 <Typography.Text className='card-inner'>02</Typography.Text>
                                 <Typography.Text className='cardText-item'>
-                                    <Space direction='horizontal'> <BsWalletFill  style={{fontSize: "18px"}}/> Late
-                                         </Space>
+                                    <Space direction='horizontal'> <BsWalletFill style={{fontSize: "18px"}}/> Late
+                                    </Space>
                                 </Typography.Text>
                             </Space>
                         </Card>
@@ -94,10 +131,10 @@ function Home() {
                          lg={{flex: '20%'}}>
                         <Card className='card-outer shadow-outer'>
                             <Space direction='vertical'>
-                                <Typography.Text className='card-inner' style={{color:'red'}}>03</Typography.Text>
+                                <Typography.Text className='card-inner' style={{color: 'red'}}>03</Typography.Text>
                                 <Typography.Text className='cardText-item'>
                                     <Space direction='horizontal'> <BsWalletFill style={{fontSize: "18px"}}/> Absent
-                                         </Space>
+                                    </Space>
                                 </Typography.Text>
                             </Space>
                         </Card>
@@ -111,8 +148,9 @@ function Home() {
                             <Space direction='vertical'>
                                 <Typography.Text className='card-inner'>09</Typography.Text>
                                 <Typography.Text className='cardText-item'>
-                                    <Space direction='horizontal'> <BsChatSquareQuoteFill  style={{fontSize: "18px"}}/> Leave Requests
-                                         </Space>
+                                    <Space direction='horizontal'> <BsChatSquareQuoteFill
+                                        style={{fontSize: "18px"}}/> Leave Requests
+                                    </Space>
                                 </Typography.Text>
                             </Space>
                         </Card>
@@ -176,8 +214,6 @@ function Home() {
                 </Col>
 
 
-
-
                 <Col xs={{flex: '100%'}}
                      sm={{flex: '100%'}}
                      md={{flex: '100%'}}
@@ -186,37 +222,35 @@ function Home() {
                     <div className="cht-outer">
                         <Card className='shadow-outer'>
 
-                            <DefaultChart />
+                            <DefaultChart/>
 
                         </Card>
                     </div>
 
                     <Card className='shadow-outer empty-margin'>
-                        <Empty />
+                        <Empty/>
                     </Card>
 
                     <Card className='shadow-outer empty-margin'>
-                        <Empty />
+                        <Empty/>
                     </Card>
 
 
                 </Col>
 
-                <Col lg={{flex:"19.9%"}}>
-                <Card className='shadow-outer empty-margin'>
-                    <Empty />
-                </Card>
-
+                <Col lg={{flex: "19.9%"}}>
                     <Card className='shadow-outer empty-margin'>
-                        <Empty />
+                        <Empty/>
                     </Card>
 
+                    <Card className='shadow-outer empty-margin'>
+                        <Empty/>
+                    </Card>
 
 
                 </Col>
 
             </Row>
-
 
 
         </div>

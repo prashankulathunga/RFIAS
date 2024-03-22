@@ -62,6 +62,67 @@ function Salary(){
             <Row gutter={12}>
                 <Col span={24}>
 
+                    <Row gutter={16}>
+                        <Col span={12}>
+
+                            <Card className='shadow-outer tbl-outer welcome-bgColor'>
+
+                                <Row>
+
+                                    <Col span={24}>
+                                        <Row>
+
+                                            <div className="button-group-outer">
+
+                                                <Col span={12}>
+                                                    <div className="search-outer">
+
+                                                        <Input type='text' variant='filled' placeholder='search here'/>
+
+                                                    </div>
+
+                                                </Col>
+
+                                                <div className="button-group-inner">
+                                                    <Button type='primary' size='middle'
+                                                            onClick={showModelReg}>Set Salary</Button>
+                                                    <Button className='but-success' type='primary' onClick={showModelUpd}
+                                                            size='middle'>Update Salary</Button>
+                                                </div>
+
+                                            </div>
+
+                                        </Row>
+                                    </Col>
+                                </Row>
+
+                            </Card>
+                        </Col>
+
+                        <Col span={12}>
+
+                            <Card className='shadow-outer tbl-outer upper-height welcome-bgColor flex-content'>
+
+                                <div className="emp-desc">
+
+                                    <Divider orientation="left">
+                                        <div className="tblText">
+                                            <h6>Fully Employees Salary Details </h6>
+                                        </div>
+                                    </Divider>
+
+                                    <p>
+                                        An employee is an individual hired by a company or organization to fulfill specific
+                                        job duties in exchange for compensation. Employees play a vital role in the success
+                                        of the organization by contributing their skills, knowledge, and effort to achieve
+                                        common goals and objectives.</p>
+                                </div>
+
+                            </Card>
+
+                        </Col>
+                    </Row>
+
 
                     <Card className='shadow-outer empCard-outer'>
 
@@ -429,26 +490,6 @@ function Salary(){
                             </div>
                         </Modal>
 
-
-                        <Row>
-
-                            <Col span={24}>
-
-                                <div className="button-group-outer">
-
-                                    <Button type='primary' size='default' onClick={showModelReg}>Set Salary</Button>
-                                    <Button className='but-success' type='primary' onClick={showModelUpd}
-                                            size='default'>Update Salary</Button>
-
-                                </div>
-                            </Col>
-                        </Row>
-
-                        <Divider orientation="left">
-                            <div className="tblText">
-                                <h6>All Employees Salary Details</h6>
-                            </div>
-                        </Divider>
                         <br/>
 
                         <div className="tbl-inner">
@@ -483,7 +524,7 @@ function Salary(){
                                     title: 'Remove Details',
                                     render: ()=> (
                                         <ButtonGroup>
-                                            <Button type='primary' danger size='small'> <AiTwotoneDelete className='btn-delete' /> Remove </Button>
+                                            <Button type='primary' danger size='middle'> <AiTwotoneDelete className='btn-delete' /> Remove </Button>
                                         </ButtonGroup>
 
                                     )

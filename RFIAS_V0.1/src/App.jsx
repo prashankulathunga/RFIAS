@@ -8,8 +8,6 @@ import Sider from "antd/es/layout/Sider.js";
 import './components/styles/dashboard.css'
 import {IoHome} from "react-icons/io5";
 import {
-    FaCalendarAlt,
-    FaCalendarWeek,
     FaMarker,
     FaMoneyCheckAlt,
     FaUserPlus,
@@ -19,15 +17,12 @@ import {
 import {MdAssignmentAdd, MdCoPresent, MdOutlineAddCard, MdOutlineUpdate} from "react-icons/md";
 import React, {useState} from "react";
 import {TbReportSearch} from "react-icons/tb";
-import {LuWalletCards} from "react-icons/lu";
-import {GiHamburgerMenu} from "react-icons/gi";
 import Home from "./components/home.jsx";
 import {BsChatSquareQuoteFill, BsJustifyRight} from "react-icons/bs";
 import {FaCodePullRequest} from "react-icons/fa6";
 import Attendance from "./components/attendance.jsx";
 import Report from "./components/reports.jsx";
 import Salary from "./components/salary.jsx";
-import EventCalendar from "./components/eventCalendar.jsx";
 import LeavRequest from "./components/leavRequest.jsx";
 import {GrTextAlignRight} from "react-icons/gr";
 
@@ -70,81 +65,66 @@ function Dashboard() {
                                 },
                                 {
                                     label: 'Researchers',
-                                    key: 'researchers',
+                                    key: '/addResearchers',
                                     icon: <FaUserTie />,
-                                    children: [
-                                        {
-                                            label: 'Researcher Operations',
-                                            key: '/addResearchers',
-                                            icon: <FaUserPlus/>,
-                                        },
-
-                                    ]
+                                    // children: [
+                                    //     {
+                                    //         label: 'Researcher Operations',
+                                    //         key: '/addResearchers',
+                                    //         icon: <FaUserPlus/>,
+                                    //     },
+                                    //
+                                    // ]
                                 },
                                 {
                                     label: 'Attendance',
-                                    key: 'attendance',
-                                    icon: <MdCoPresent />,
-                                    children:[
-                                        {
-                                            label: 'Attendance Operations',
-                                            key: '/addAttendance',
-                                            icon: <FaMarker />,
-                                        },
-                                    ]
+                                    key: '/addAttendance',
+                                    icon: <FaMarker />,
+                                    // children:[
+                                    //     {
+                                    //         label: 'Attendance Operations',
+                                    //         key: '/addAttendance',
+                                    //         icon: <FaMarker />,
+                                    //     },
+                                    // ]
                                 },
                                 {
                                     label: 'Reports',
-                                    key: 'report',
-                                    icon: <TbReportSearch />,
-                                    children:[
-                                        {
-                                            label: 'Report Operations',
-                                            key: '/addReport',
-                                            icon: <MdAssignmentAdd  />,
-                                        },
-                                    ]
+                                    key: '/addReport',
+                                    icon: <MdAssignmentAdd />,
+                                    // children:[
+                                    //     {
+                                    //         label: 'Report Operations',
+                                    //         key: '/addReport',
+                                    //         icon: <MdAssignmentAdd  />,
+                                    //     },
+                                    // ]
                                 },
                                 {
                                     label: 'Salary',
-                                    key: 'salary',
-                                    icon: <FaMoneyCheckAlt />,
-                                    children: [
-                                        {
-                                            label: 'Salary Operations',
-                                            key: '/addSalary',
-                                            icon: <FaWallet   />,
-                                        },
-                                    ]
+                                    key: '/addSalary',
+                                    icon: <FaWallet />,
+                                    // children: [
+                                    //     {
+                                    //         label: 'Salary Operations',
+                                    //         key: '/addSalary',
+                                    //         icon: <FaWallet   />,
+                                    //     },
+                                    // ]
                                 },
                                 {
                                     label: 'Leave Requests',
-                                    key: 'leaveRequest',
+                                    key: '/leaveRequest',
                                     icon: <Badge count={9} size="small"> <FaCodePullRequest/> </Badge>,
-                                    children: [
-                                        {
-                                            label: 'Request Operations',
-                                            key: '/leaveRequest',
-                                            icon: <BsChatSquareQuoteFill />,
-                                        },
-
-                                    ]
-                                },
-                                // {
-                                //     label: 'Calender',
-                                //     key: 'calender',
-                                //     icon: <FaCalendarAlt />,
-                                //     children: [
-                                //         {
-                                //             label: 'Events',
-                                //             key: '/calender',
-                                //             icon: <FaCalendarWeek />,
-                                //         },
-                                //
-                                //     ]
-                                // },
-
-
+                                    // children: [
+                                    //     {
+                                    //         label: 'Request Operations',
+                                    //         key: '/leaveRequest',
+                                    //         icon: <BsChatSquareQuoteFill />,
+                                    //     },
+                                    //
+                                    // ]
+                                }
                             ]}/>
 
 

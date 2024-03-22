@@ -1,4 +1,4 @@
-import {Button, Card, Col, Divider, Row, Table} from "antd";
+import {Button, Card, Col, Divider, Input, Row, Table} from "antd";
 import React from "react";
 import {ButtonGroup} from "react-bootstrap";
 import {AiTwotoneDelete} from "react-icons/ai";
@@ -30,13 +30,67 @@ function LeavRequest(){
             <Row gutter={12}>
                 <Col span={24}>
 
+                    <Row gutter={16}>
+                        <Col span={8}>
+
+                            <Card className='shadow-outer tbl-outer welcome-bgColor'>
+
+                                <Row>
+
+                                    <Col span={24}>
+                                        <Row>
+
+                                            <div className="button-group-outer">
+
+                                                <Col span={24}>
+                                                    <div className="search-outer">
+
+                                                        <Input type='text' variant='filled' placeholder='search here'/>
+
+                                                    </div>
+
+                                                </Col>
+
+                                            </div>
+
+                                        </Row>
+                                    </Col>
+                                </Row>
+
+                            </Card>
+                        </Col>
+
+                        <Col span={16}>
+
+                            <Card className='shadow-outer tbl-outer upper-height welcome-bgColor flex-content'>
+
+                                <div className="emp-desc">
+
+                                    <Divider orientation="left">
+                                        <div className="tblText">
+                                            <h6>Fully Employees Salary Details </h6>
+                                        </div>
+                                    </Divider>
+
+                                    <p>
+                                        An employee is an individual hired by a company or organization to fulfill specific
+                                        job duties in exchange for compensation. Employees play a vital role in the success
+                                        of the organization by contributing their skills, knowledge, and effort to achieve
+                                        common goals and objectives.</p>
+                                </div>
+
+                            </Card>
+
+                        </Col>
+                    </Row>
+
                     <Card className='shadow-outer empCard-outer'>
 
-                        <Divider orientation="left">
-                            <div className="tblText">
-                                <h6>Leave Requests</h6>
-                            </div>
-                        </Divider>
+                        {/*<Divider orientation="left">*/}
+                        {/*    <div className="tblText">*/}
+                        {/*        <h6>Leave Requests</h6>*/}
+                        {/*    </div>*/}
+                        {/*</Divider>*/}
                         <br/>
 
                         <div className="tbl-inner">
