@@ -38,10 +38,10 @@ function Home() {
                         <Card className='cht-outer shadow-outer welcome-bgColor'>
                             <Row gutter={12}>
 
-                                <Col xs={{flex: '100%'}}
-                                     sm={{flex: '100%'}}
-                                     md={{flex: '100%'}}
-                                     lg={{flex: '50%'}}>
+                                <Col xs={{span: '24'}}
+                                     sm={{span: '24'}}
+                                     md={{span: '24'}}
+                                     lg={{span: '15'}}>
                                     <div className="welcome-outer">
                                         <img src={welcomeText} alt="welcomeText"/>
                                         <div className="welcome-text">
@@ -49,12 +49,12 @@ function Home() {
                                             <p>
                                                 "Streamline your attendance tracking with cutting-edge face recognition
                                                 technology. RFIAS revolutionizes the
-                                                way you manage attendance, ensuring accuracy, security, and efficiency in one
+                                                way you manage attendance, ensuring accuracy, security, and efficiency
+                                                in one
                                                 seamless solution."</p>
 
                                             <h5>Hello Admin,</h5>
                                         </div>
-
 
 
                                     </div>
@@ -65,6 +65,16 @@ function Home() {
                         </Card>
 
                     </Col>
+
+
+                    {/*<Col span={8}>*/}
+                    {/*    <Card className='cht-outer shadow-outer time-card-outer'>*/}
+                    {/*    <div className="time-outer">*/}
+                    {/*        <Clock />*/}
+                    {/*    </div>*/}
+                    {/*    </Card>*/}
+                    {/*</Col>*/}
+
 
 
                     {/*<Col span={8}>*/}
