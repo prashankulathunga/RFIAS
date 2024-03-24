@@ -4,10 +4,10 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     password: '1234',
-    database: 'university',
+    database: 'attendance',
 })
 
-let sql = "SELECT * FROM attendance WHERE attendance_id=1";
+let sql = "SELECT * FROM employee WHERE emp_Id=1";
 
 connection.execute(sql, (err, result) => {
     if (err) throw err;

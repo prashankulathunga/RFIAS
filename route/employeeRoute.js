@@ -8,5 +8,4 @@ router.get('/find-all', employeeController.findAll);
 router.delete('/delete-by-id/:id', employeeController.deleteById);
 router.put('/update', employeeController.update);
 
-
 module.exports = router;
