@@ -43,4 +43,3 @@ app.use('/api/v1/attendance', atttendanceRoute);
 app.use('/api/v1/report', reportRoute);
 
 
-
