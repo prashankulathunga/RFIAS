@@ -4,7 +4,12 @@ import Employee from "./components/employee.jsx";
 import Report from "./components/reports.jsx";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< Updated upstream
 import {Routes, Route, useNavigate } from "react-router-dom";
+=======
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Clock from "./components/cards/clock.jsx";
+>>>>>>> Stashed changes
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Badge, Layout, Menu} from 'antd';

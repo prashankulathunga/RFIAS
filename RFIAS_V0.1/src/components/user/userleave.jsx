@@ -64,7 +64,6 @@ function Leave() {
   );
 }
 
-export default Leave;
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import "./allcss.css"

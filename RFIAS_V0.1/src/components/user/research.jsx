@@ -126,7 +126,7 @@ function Research() {
   );
 }
 
-export default Research;
+
 import { Button, FormLabel, Table } from "react-bootstrap";
 import { useRef, useState } from "react";
 import "./research.css";
